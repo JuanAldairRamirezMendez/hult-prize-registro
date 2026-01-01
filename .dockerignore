@@ -1,0 +1,13 @@
+node_modules
+npm-debug.log
+src
+.git
+.gitignore
+README.md
+Dockerfile
+.dockerignore
+angular.json
+tsconfig*.json
+.DS_Store
+*.log
+*.md

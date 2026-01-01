@@ -1,3 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
 
-@import "tailwindcss";
+/* Tailwind directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global styles (keep minimal, use Tailwind classes in templates) */
+html, body { height: 100%; }
+
+/* Global background color - solid blue */
+body {
+	background: #2563eb;
+	min-height: 100vh;
+	margin: 0;
+	color: #fff;
+}

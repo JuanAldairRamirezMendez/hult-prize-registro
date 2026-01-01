@@ -17,9 +17,20 @@
         "build": {
           "builder": "@angular/build:application",
           "options": {
+            "assets": [
+              "src/favicon.ico",
+              "src/assets",
+              {
+                "glob": "**/*",
+                "input": "public",
+                "output": "/"
+              }
+            ],
             "browser": "src/main.ts",
             "tsConfig": "tsconfig.app.json",
             "assets": [
+              "src/favicon.ico",
+              "src/assets",
               {
                 "glob": "**/*",
                 "input": "public"

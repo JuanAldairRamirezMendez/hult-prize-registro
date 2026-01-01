@@ -1,0 +1,77 @@
+/* Styles for registro form card (fallback when Tailwind not available) */
+.registro-card {
+  max-width: 520px;
+  margin: 0 auto;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(2,6,23,0.4);
+  padding: 24px;
+  color: #0b1220;
+  position: relative;
+  z-index: 30;
+}
+
+.registro-card header {
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.registro-card header h2 {
+  font-weight: 700;
+  margin: 0 0 6px 0;
+}
+
+.registro-card header p {
+  margin: 0;
+  color: #4b5563;
+  font-size: 0.9rem;
+}
+
+.registro-card fieldset {
+  border: none;
+  margin: 0 0 12px 0;
+  padding: 0;
+}
+
+.registro-card label {
+  display: block;
+  font-size: 0.9rem;
+  margin-bottom: 6px;
+}
+
+.registro-card input[type="text"],
+.registro-card input[type="email"],
+.registro-card input[type="tel"],
+.registro-card input[type="number"],
+.registro-card select,
+.registro-card textarea {
+  width: 100%;
+  border: 1px solid #e6edf3;
+  padding: 10px 12px;
+  border-radius: 8px;
+  box-sizing: border-box;
+  font-size: 0.95rem;
+  background: #fff;
+}
+
+.registro-card textarea { min-height: 120px; resize: vertical; }
+
+.registro-card .text-gray-500 { color: #6b7280; }
+
+.registro-card button[type="submit"] {
+  width: 100%;
+  background: #2563eb;
+  color: #fff;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.registro-card button[disabled] { opacity: 0.6; cursor: default; }
+
+/* Responsive spacing */
+@media (min-width: 768px) {
+  .registro-card { padding: 32px; }
+}

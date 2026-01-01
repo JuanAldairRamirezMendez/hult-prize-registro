@@ -1,0 +1,70 @@
+<section aria-labelledby="registro-title" class="registro-card max-w-[520px] mx-auto bg-white rounded-[12px] shadow-xl p-6 md:p-8 text-[#0b1220] relative z-30" style="background:#ffffff;color:#0b1220;">
+  <header class="text-center mb-4">
+    <h2>Registra tu Proyecto</h2>
+    <p>Completa el formulario para participar en Hult Prize Campus Round</p>
+  </header>
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" class="space-y-4">
+    <fieldset class="space-y-1">
+      <label for="teamName">Nombre del equipo</label>
+      <input id="teamName" formControlName="teamName" type="text" placeholder="Ingresa el nombre de tu equipo" class="w-full border rounded px-3 py-2 focus:ring-2" />
+      <p role="alert" class="text-red-500 text-xs" *ngIf="form.get('teamName')?.invalid && (form.get('teamName')?.touched || form.get('teamName')?.dirty)">El nombre del equipo es obligatorio.</p>
+    </fieldset>
+
+    <fieldset class="space-y-1">
+      <label for="leaderName">Nombre del líder</label>
+      <input id="leaderName" formControlName="leaderName" type="text" placeholder="Ingresa el nombre del líder" class="w-full border rounded px-3 py-2 focus:ring-2" />
+      <p role="alert" class="text-red-500 text-xs" *ngIf="form.get('leaderName')?.invalid && (form.get('leaderName')?.touched || form.get('leaderName')?.dirty)">El nombre del líder es obligatorio.</p>
+    </fieldset>
+
+    <fieldset class="space-y-1">
+      <label for="email">Correo electrónico</label>
+      <input id="email" formControlName="email" type="email" placeholder="tu@email.com" class="w-full border rounded px-3 py-2 focus:ring-2" />
+      <p role="alert" class="text-red-500 text-xs" *ngIf="form.get('email')?.invalid && (form.get('email')?.touched || form.get('email')?.dirty)">Ingresa un correo válido.</p>
+    </fieldset>
+
+    <fieldset class="space-y-1">
+      <label for="phone">Teléfono</label>
+      <input id="phone" formControlName="phone" type="tel" placeholder="999 999 999" class="w-full border rounded px-3 py-2 focus:ring-2" />
+    </fieldset>
+
+    <fieldset class="space-y-1">
+      <label for="members">Número de miembros</label>
+      <input id="members" formControlName="members" type="number" min="1" max="20" class="w-full border rounded px-3 py-2 focus:ring-2" />
+    </fieldset>
+
+    <fieldset class="space-y-1">
+      <label for="projectName">Nombre del proyecto</label>
+      <input id="projectName" formControlName="projectName" type="text" placeholder="Nombre del proyecto" class="w-full border rounded px-3 py-2 focus:ring-2" />
+    </fieldset>
+
+    <fieldset class="space-y-1">
+      <label for="category">Categoría de impacto</label>
+      <select id="category" formControlName="category" aria-required="true" class="w-full border rounded px-3 py-2 focus:ring-2">
+        <option value="" disabled selected>Selecciona una categoría</option>
+        <option *ngFor="let c of categories" [value]="c">{{ c }}</option>
+      </select>
+      <p role="alert" class="text-red-500 text-xs" *ngIf="form.get('category')?.invalid && (form.get('category')?.touched || form.get('category')?.dirty)">Selecciona una categoría.</p>
+    </fieldset>
+
+    <fieldset class="space-y-1">
+      <label for="description">Descripción del Proyecto *</label>
+      <textarea id="description" formControlName="description" rows="6" placeholder="Describe tu proyecto..." aria-required="true" class="w-full border rounded px-3 py-2 focus:ring-2"></textarea>
+      <small class="text-gray-500 text-xs block">{{ (form.get('description')?.value?.length || 0) }} / 1000</small>
+      <p role="alert" class="text-red-500 text-xs" *ngIf="form.get('description')?.invalid && (form.get('description')?.touched || form.get('description')?.dirty)">La descripción es obligatoria (mínimo 20 caracteres).</p>
+    </fieldset>
+
+    <button type="submit" [disabled]="form.invalid || loading" class="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded disabled:bg-gray-300 flex items-center justify-center gap-2">
+      <svg *ngIf="loading" class="animate-spin h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path>
+      </svg>
+      <span *ngIf="!loading">Enviar Registro</span>
+      <span *ngIf="loading">Enviando...</span>
+    </button>
+    <aside *ngIf="success" role="status" aria-live="polite" class="mb-4 rounded-md bg-green-50 border border-green-100 p-4 text-green-800">
+    <strong class="block font-semibold">Registro enviado</strong>
+    <p class="text-sm">Gracias — hemos recibido tu inscripción.</p>
+  </aside>
+  </form>
+</section>

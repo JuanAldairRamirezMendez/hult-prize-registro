@@ -1,0 +1,29 @@
+<!-- Hero con imagen de fondo y overlay -->
+<section class="h-[72vh] md:h-[80vh] relative flex flex-col items-center justify-center text-center"
+         style="background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('/assets/hero.jpg'); background-size: cover; background-position: center;">
+
+  <!-- Overlay integrado vía linear-gradient en background-image -->
+
+  <!-- Header posicionado arriba, centrado -->
+  <header class="absolute top-8 md:top-12 left-0 right-0 w-full max-w-3xl mx-auto text-center text-white px-4 z-20">
+    <figure class="text-yellow-400 mb-4 text-5xl" aria-hidden="true">
+      <span role="img" aria-label="trofeo">🏆</span>
+    </figure>
+
+    <h1 class="text-3xl md:text-4xl font-extrabold">Hult Prize</h1>
+    <p class="mt-2 text-sm md:text-base max-w-2xl mx-auto">La competencia de emprendimiento social más grande del mundo para estudiantes universitarios</p>
+
+    <p class="mt-6 text-yellow-300 font-semibold text-lg md:text-2xl">US$ 1,000,000 <span class="block text-xs text-white/80">en premios</span></p>
+  </header>
+
+  <!-- Formulario dentro del hero (centrado) -->
+  <!-- Formulario movido fuera del hero (ahora se mostrará debajo del hero) -->
+
+</section>
+
+<!-- Sección debajo del hero que renderiza el formulario -->
+<section class="py-12">
+  <div class="max-w-4xl mx-auto px-4">
+    <app-registro-form></app-registro-form>
+  </div>
+</section>

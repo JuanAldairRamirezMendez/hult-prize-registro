@@ -1,24 +1,62 @@
-# HultPrizeRegistro
+# Frontend Hult Prize Registro
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.0.4.
+Aplicación Angular para el registro de proyectos Hult Prize.
 
-## Development server
+## Desarrollo
 
-To start a local development server, run:
+### Prerrequisitos
+- Node.js 18+
+- Angular CLI
 
+### Instalación
 ```bash
+npm install
+```
+
+### Ejecutar en desarrollo
+```bash
+npm start
+# o
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+La aplicación estará disponible en `http://localhost:4200`.
 
-## Code scaffolding
+## Producción
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
+### Build
 ```bash
-ng generate component component-name
+ng build --configuration production
 ```
+
+Los archivos se generan en `dist/hult-prize-registro/`.
+
+### Despliegue en Render
+
+1. **Sube el código a GitHub** (asegúrate de incluir el directorio del frontend)
+
+2. **En Render.com:**
+   - Crea un nuevo **Static Site**
+   - Conecta tu repositorio de GitHub
+   - Selecciona **Docker** como método de despliegue
+   - Configura el **Root Directory** según la estructura de tu repo (ej: `frotend/hult-prize-registro`)
+
+3. **Comandos de build (en Render):**
+   - **Build Command:** `ng build --configuration production`
+   - **Publish Directory:** `dist/hult-prize-registro`
+
+### Variables de entorno
+
+La aplicación usa diferentes URLs para desarrollo y producción:
+- **Desarrollo:** `http://localhost:3000`
+- **Producción:** `https://hult-prize-registro-backend.onrender.com`
+
+## Características
+
+- Formulario de registro responsive
+- Validación de campos
+- Integración con backend API
+- Diseño moderno con Tailwind CSS
 
 For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
 
