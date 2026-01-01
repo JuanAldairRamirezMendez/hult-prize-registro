@@ -38,12 +38,14 @@ Los archivos se generan en `dist/hult-prize-registro/`.
 2. **En Render.com:**
    - Crea un nuevo **Static Site**
    - Conecta tu repositorio de GitHub
-   - Selecciona **Docker** como método de despliegue
-   - Configura el **Root Directory** según la estructura de tu repo (ej: `frotend/hult-prize-registro`)
+   - **Root Directory:** `frotend/hult-prize-registro` (ajusta según tu estructura)
 
-3. **Comandos de build (en Render):**
+3. **Configuración:**
    - **Build Command:** `ng build --configuration production`
-   - **Publish Directory:** `dist/hult-prize-registro`
+   - **Publish Directory:** `dist/hult-prize-registro/browser`
+   - **Redirects:** Ya está configurado con el archivo `_redirects`
+
+4. **Deploy!** Render construirá y desplegará automáticamente.
 
 ### Variables de entorno
 

@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, isDevMode } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
+import { environment as prodEnvironment } from '../../../environments/environment.prod';
 
 @Component({
   selector: 'app-registro-form',
@@ -12,6 +13,7 @@ import { environment } from '../../../environments/environment';
   imports: [CommonModule, ReactiveFormsModule]
 })
 export class RegistroFormComponent {
+  private apiUrl = isDevMode() ? environment.apiUrl : prodEnvironment.apiUrl;
   categories = [
     'Salud','Educación','Medio Ambiente','Agricultura','Energía',
     'Inclusión Financiera','Tecnología para el Bien','Agua y Saneamiento','Otros'
@@ -43,7 +45,7 @@ export class RegistroFormComponent {
     }
 
     this.loading = true;
-    this.http.post(`${environment.apiUrl}/registro`, this.form.value).subscribe({
+    this.http.post(`${this.apiUrl}/registro`, this.form.value).subscribe({
       next: (response) => {
         this.loading = false;
         this.success = true;
