@@ -2,6 +2,7 @@ import { Component, isDevMode } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 import { environment } from '../../../environments/environment';
 import { environment as prodEnvironment } from '../../../environments/environment.prod';
 
@@ -23,8 +24,9 @@ export class RegistroFormComponent {
   submitted = false;
   success = false;
   loading = false;
+  errorMessage = '';
 
-  constructor(private fb: FormBuilder, private http: HttpClient) {
+  constructor(private fb: FormBuilder, private http: HttpClient, private router: Router) {
     this.form = this.fb.group({
       teamName: ['', Validators.required],
       leaderName: ['', Validators.required],
@@ -39,6 +41,8 @@ export class RegistroFormComponent {
 
   onSubmit() {
     this.submitted = true;
+    this.errorMessage = '';
+
     if (this.form.invalid) {
       this.form.markAllAsTouched();
       return;
@@ -50,15 +54,26 @@ export class RegistroFormComponent {
         this.loading = false;
         this.success = true;
         console.log('Registro exitoso', response);
-        this.form.reset({ members: 1, category: '' });
-        this.form.markAsPristine();
-        this.form.markAsUntouched();
-        setTimeout(() => (this.success = false), 5000);
+
+        // Redirigir a página de éxito después de 2 segundos
+        setTimeout(() => {
+          this.router.navigate(['/success']);
+        }, 2000);
       },
       error: (error) => {
         this.loading = false;
         console.error('Error en el registro', error);
-        // Aquí puedes manejar el error, por ejemplo, mostrar un mensaje
+
+        // Mostrar mensaje de error específico
+        if (error.status === 0) {
+          this.errorMessage = 'Error de conexión. Verifica tu conexión a internet.';
+        } else if (error.status === 500) {
+          this.errorMessage = 'Error del servidor. Inténtalo más tarde.';
+        } else if (error.error?.message) {
+          this.errorMessage = error.error.message;
+        } else {
+          this.errorMessage = 'Error desconocido. Inténtalo de nuevo.';
+        }
       }
     });
   }

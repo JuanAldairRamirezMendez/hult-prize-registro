@@ -62,9 +62,26 @@
       <span *ngIf="!loading">Enviar Registro</span>
       <span *ngIf="loading">Enviando...</span>
     </button>
+
+    <!-- Mensaje de error -->
+    <aside *ngIf="errorMessage" role="alert" aria-live="polite" class="mb-4 rounded-md bg-red-50 border border-red-200 p-4 text-red-800">
+      <div class="flex items-center">
+        <svg class="h-5 w-5 text-red-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+        </svg>
+        <strong class="block font-semibold">Error en el registro</strong>
+      </div>
+      <p class="text-sm mt-1">{{ errorMessage }}</p>
+    </aside>
+
     <aside *ngIf="success" role="status" aria-live="polite" class="mb-4 rounded-md bg-green-50 border border-green-100 p-4 text-green-800">
-    <strong class="block font-semibold">Registro enviado</strong>
-    <p class="text-sm">Gracias — hemos recibido tu inscripción.</p>
-  </aside>
+      <div class="flex items-center">
+        <svg class="h-5 w-5 text-green-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+        </svg>
+        <strong class="block font-semibold">Registro enviado</strong>
+      </div>
+      <p class="text-sm mt-1">Gracias — hemos recibido tu inscripción. Redirigiendo...</p>
+    </aside>
   </form>
 </section>
