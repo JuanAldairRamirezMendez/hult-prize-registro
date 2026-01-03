@@ -4,7 +4,6 @@ import { Component } from '@angular/core';
   selector: 'app-success',
   imports: [],
   templateUrl: './success.html',
-  styleUrl: './success.css',
 })
 export class SuccessComponent {
 

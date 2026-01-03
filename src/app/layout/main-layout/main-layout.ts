@@ -9,7 +9,6 @@ import { FooterComponent } from '../../components/footer/footer.component';
   standalone: true,
   imports: [CommonModule, RouterOutlet, HeaderComponent, FooterComponent],
   templateUrl: './main-layout.html',
-  styleUrl: './main-layout.css',
 })
 export class MainLayoutComponent {
 

@@ -1,5 +1,7 @@
 {
   "plugins": {
-    "@tailwindcss/postcss": {}
+    "@tailwindcss/postcss": {
+      "base": "/home/aldair/Descargas/figma-mockup/frotend/hult-prize-registro"
+    }
   }
 }

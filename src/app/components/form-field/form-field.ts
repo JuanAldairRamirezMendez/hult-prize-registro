@@ -5,7 +5,6 @@ import { CommonModule } from '@angular/common';
   selector: 'app-form-field',
   imports: [CommonModule],
   templateUrl: './form-field.html',
-  styleUrl: './form-field.css',
 })
 export class FormField {
   @Input() label: string = '';

@@ -1,44 +1,44 @@
-<section aria-labelledby="registro-title" class="registro-card max-w-[520px] mx-auto bg-white rounded-[12px] shadow-xl p-6 md:p-8 text-[#0b1220] relative z-30 animate-bounce-in hover:shadow-2xl transition-shadow duration-300" style="background:#ffffff;color:#0b1220;">
-  <header class="text-center mb-4 animate-fade-in">
+<section aria-labelledby="registro-title" class="max-w-[520px] mx-auto bg-white rounded-[12px] shadow-xl p-6 md:p-8 text-[#0b1220] relative z-30 transition-shadow duration-300 hover:shadow-2xl text-green-600">
+  <header class="text-center mb-4">
     <h2 class="text-2xl font-bold text-gray-900 hover:text-blue-600 transition-colors duration-300">Registra tu Proyecto</h2>
     <p class="text-gray-600 mt-2">Completa el formulario para participar en Hult Prize Campus Round</p>
   </header>
 
-  <form [formGroup]="form" (ngSubmit)="onSubmit()" class="space-y-4">
-    <fieldset class="space-y-1 animate-slide-up" style="animation-delay: 0.1s;">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" class="space-y-4">
+    <fieldset class="space-y-1">
       <label for="teamName" class="block text-sm font-medium text-gray-700">Nombre del equipo</label>
       <input id="teamName" formControlName="teamName" type="text" placeholder="Ingresa el nombre de tu equipo" class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 hover:border-blue-400" />
       <p role="alert" class="text-red-500 text-xs animate-pulse" *ngIf="form.get('teamName')?.invalid && (form.get('teamName')?.touched || form.get('teamName')?.dirty)">El nombre del equipo es obligatorio.</p>
     </fieldset>
 
-    <fieldset class="space-y-1 animate-slide-up" style="animation-delay: 0.2s;">
+    <fieldset class="space-y-1">
       <label for="leaderName" class="block text-sm font-medium text-gray-700">Nombre del líder</label>
       <input id="leaderName" formControlName="leaderName" type="text" placeholder="Ingresa el nombre del líder" class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 hover:border-blue-400" />
       <p role="alert" class="text-red-500 text-xs animate-pulse" *ngIf="form.get('leaderName')?.invalid && (form.get('leaderName')?.touched || form.get('leaderName')?.dirty)">El nombre del líder es obligatorio.</p>
     </fieldset>
 
-    <fieldset class="space-y-1 animate-slide-up" style="animation-delay: 0.3s;">
+    <fieldset class="space-y-1">
       <label for="email" class="block text-sm font-medium text-gray-700">Correo electrónico</label>
       <input id="email" formControlName="email" type="email" placeholder="tu@email.com" class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 hover:border-blue-400" />
       <p role="alert" class="text-red-500 text-xs animate-pulse" *ngIf="form.get('email')?.invalid && (form.get('email')?.touched || form.get('email')?.dirty)">Ingresa un correo válido.</p>
     </fieldset>
 
-    <fieldset class="space-y-1 animate-slide-up" style="animation-delay: 0.4s;">
+    <fieldset class="space-y-1">
       <label for="phone" class="block text-sm font-medium text-gray-700">Teléfono</label>
       <input id="phone" formControlName="phone" type="tel" placeholder="999 999 999" class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 hover:border-blue-400" />
     </fieldset>
 
-    <fieldset class="space-y-1 animate-slide-up" style="animation-delay: 0.5s;">
+    <fieldset class="space-y-1">
       <label for="members" class="block text-sm font-medium text-gray-700">Número de miembros</label>
       <input id="members" formControlName="members" type="number" min="1" max="20" class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 hover:border-blue-400" />
     </fieldset>
 
-    <fieldset class="space-y-1 animate-slide-up" style="animation-delay: 0.6s;">
+    <fieldset class="space-y-1">
       <label for="projectName" class="block text-sm font-medium text-gray-700">Nombre del proyecto</label>
       <input id="projectName" formControlName="projectName" type="text" placeholder="Nombre del proyecto" class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 hover:border-blue-400" />
     </fieldset>
 
-    <fieldset class="space-y-1 animate-slide-up" style="animation-delay: 0.7s;">
+    <fieldset class="space-y-1">
       <label for="category" class="block text-sm font-medium text-gray-700">Categoría de impacto</label>
       <select id="category" formControlName="category" aria-required="true" class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 hover:border-blue-400">
         <option value="" disabled selected>Selecciona una categoría</option>
@@ -47,7 +47,7 @@
       <p role="alert" class="text-red-500 text-xs animate-pulse" *ngIf="form.get('category')?.invalid && (form.get('category')?.touched || form.get('category')?.dirty)">Selecciona una categoría.</p>
     </fieldset>
 
-    <fieldset class="space-y-1 animate-slide-up" style="animation-delay: 0.8s;">
+    <fieldset class="space-y-1">
       <label for="description" class="block text-sm font-medium text-gray-700">Descripción del Proyecto *</label>
       <textarea id="description" formControlName="description" rows="6" placeholder="Describe tu proyecto..." aria-required="true" class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 hover:border-blue-400 resize-none"></textarea>
       <small class="text-gray-500 text-xs block">{{ (form.get('description')?.value?.length || 0) }} / 1000</small>

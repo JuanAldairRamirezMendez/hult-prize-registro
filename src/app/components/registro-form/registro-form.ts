@@ -9,7 +9,6 @@ import { environment as prodEnvironment } from '../../../environments/environmen
 @Component({
   selector: 'app-registro-form',
   templateUrl: './registro-form.html',
-  styleUrls: ['./registro-form.css'],
   standalone: true,
   imports: [CommonModule, ReactiveFormsModule]
 })

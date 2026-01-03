@@ -1,17 +1,17 @@
 <!-- Hero con imagen de fondo y overlay -->
-<section class="h-[72vh] md:h-[80vh] relative flex flex-col items-center justify-center text-center"
-         style="background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('/assets/hero.jpg'); background-size: cover; background-position: center;">
+<div class="text-green-600">
+<section class="h-[72vh] md:h-[80vh] relative flex flex-col items-center justify-center text-center bg-cover bg-center"
+         style="background-image: url('/assets/hero.jpg');">
 
-  <!-- Overlay integrado vía linear-gradient en background-image -->
+  <div class="absolute inset-0 bg-black/75"></div>
 
   <!-- Header posicionado arriba, centrado -->
-  <header class="absolute top-8 md:top-12 left-0 right-0 w-full max-w-3xl mx-auto text-center text-white px-4 z-20">
+  <header class="absolute top-8 md:top-12 left-0 right-0 w-full max-w-3xl mx-auto text-center text-white px-4 z-20 hero-header">
     <figure class="text-yellow-400 mb-4 text-5xl" aria-hidden="true">
       <span role="img" aria-label="trofeo">🏆</span>
     </figure>
-
-    <h1 class="text-3xl md:text-4xl font-extrabold">Hult Prize</h1>
-    <p class="mt-2 text-sm md:text-base max-w-2xl mx-auto">La competencia de emprendimiento social más grande del mundo para estudiantes universitarios</p>
+    <h1 class="text-3xl md:text-4xl font-extrabold text-white">Hult Prize</h1>
+    <p class="mt-2 text-sm md:text-base max-w-2xl mx-auto text-white">La competencia de emprendimiento social más grande del mundo para estudiantes universitarios</p>
 
     <p class="mt-6 text-yellow-300 font-semibold text-lg md:text-2xl">US$ 1,000,000 <span class="block text-xs text-white/80">en premios</span></p>
   </header>
@@ -22,12 +22,12 @@
 </section>
 
 <!-- ¿Qué es Hult Prize? -->
-<section class="py-16 bg-white animate-fade-in">
+<section class="py-16 bg-white">
   <div class="max-w-xl mx-auto px-4 text-center">
-    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">¿Qué es Hult Prize?</h2>
+    <div class="text-3xl md:text-4xl font-bold text-white mb-6">¿Qué es Hult Prize?</div>
     <div class="w-24 h-1 bg-blue-600 mx-auto mb-8"></div>
 
-    <div class="card p-6 md:p-8 shadow-lg hover:scale-105 transition-transform duration-300">
+    <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg hover:scale-105 transition-transform duration-300 mb-8">
       <p class="text-lg leading-relaxed mb-6 text-gray-700">
         El Hult Prize es una competencia anual de startups que desafía a estudiantes universitarios de todo el mundo a resolver los problemas sociales más urgentes del planeta a través del emprendimiento social.
       </p>
@@ -35,106 +35,99 @@
         Fundado por Bertil Hult en 2009 y en asociación con las Naciones Unidas, el Hult Prize se conoce como el "Premio Nobel para estudiantes" y ha lanzado más de 50,000 startups de impacto social.
       </p>
     </div>
-  </div>
-</section>
 
-<!-- Alcance Global -->
-<section class="py-16 bg-gray-50 animate-fade-in">
-  <div class="max-w-5xl mx-auto px-4 text-center">
-    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Alcance Global</h2>
-    <div class="w-24 h-1 bg-blue-600 mx-auto mb-8"></div>
-
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <!-- Estadísticas integradas en el segundo componente -->
+    <div class="grid grid-cols-1 gap-4">
       <!-- Estadística 1 -->
-      <div class="card p-6 shadow-lg hover:scale-105 transition-transform duration-300">
-        <div class="bg-blue-600 text-white rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
-          200K+
+      <div class="bg-white relative p-4 md:p-5 rounded-xl shadow-lg hover:scale-105 transition-transform duration-300 h-20 md:h-24 flex items-center justify-center max-w-lg mx-auto">
+        <div class="absolute left-3 md:left-4 bg-blue-600 text-white rounded-full w-10 h-10 md:w-12 md:h-12 flex items-center justify-center text-xs md:text-sm font-bold" aria-hidden="true">200K+</div>
+        <div class="text-center">
+          <h3 class="text-base md:text-lg font-semibold text-gray-900">Alcance Global</h3>
+          <p class="text-xs md:text-sm text-gray-600">Más de 200,000 participantes de 150+ países cada año</p>
         </div>
-        <h3 class="text-xl font-semibold text-gray-900 mb-2">Participantes</h3>
-        <p class="text-gray-600">Más de 200,000 participantes de 150+ países cada año</p>
       </div>
 
       <!-- Estadística 2 -->
-      <div class="card p-6 shadow-lg hover:scale-105 transition-transform duration-300">
-        <div class="bg-green-600 text-white rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
-          🌐
+      <div class="bg-white relative p-4 md:p-5 rounded-xl shadow-lg hover:scale-105 transition-transform duration-300 h-20 md:h-24 flex items-center justify-center max-w-lg mx-auto">
+        <div class="absolute left-3 md:left-4 text-2xl md:text-3xl" aria-hidden="true">🌐</div>
+        <div class="text-center">
+          <h3 class="text-base md:text-lg font-semibold text-gray-900">Networking</h3>
+          <p class="text-xs md:text-sm text-gray-600">Conecta con emprendedores, inversores y líderes mundiales</p>
         </div>
-        <h3 class="text-xl font-semibold text-gray-900 mb-2">Networking</h3>
-        <p class="text-gray-600">Conecta con emprendedores, inversores y líderes mundiales</p>
       </div>
 
       <!-- Estadística 3 -->
-      <div class="card p-6 shadow-lg hover:scale-105 transition-transform duration-300">
-        <div class="bg-purple-600 text-white rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
-          🚀
+      <div class="bg-white relative p-4 md:p-5 rounded-xl shadow-lg hover:scale-105 transition-transform duration-300 h-20 md:h-24 flex items-center justify-center max-w-lg mx-auto">
+        <div class="absolute left-3 md:left-4 text-2xl md:text-3xl" aria-hidden="true">🚀</div>
+        <div class="text-center">
+          <h3 class="text-base md:text-lg font-semibold text-gray-900">Aceleración</h3>
+          <p class="text-xs md:text-sm text-gray-600">Mentoría, capacitación y recursos para lanzar tu startup</p>
         </div>
-        <h3 class="text-xl font-semibold text-gray-900 mb-2">Aceleración</h3>
-        <p class="text-gray-600">Mentoría, capacitación y recursos para lanzar tu startup</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- El Premio -->
-<section class="py-16 bg-white animate-fade-in">
-  <div class="max-w-xl mx-auto px-4 text-center">
+<section class="py-16 bg-gray-50">
+  <div class="max-w-3xl mx-auto px-4 text-center">
     <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">El Premio</h2>
     <div class="w-24 h-1 bg-blue-600 mx-auto mb-8"></div>
 
-    <div class="card p-6 md:p-8 mb-8 shadow-lg hover:scale-105 transition-transform duration-300">
+    <div class="bg-white relative p-4 md:p-5 mb-8 rounded-xl shadow-lg hover:scale-105 transition-transform duration-300 h-20 md:h-24 flex items-center justify-center max-w-lg mx-auto">
+      <div class="absolute left-3 md:left-4 top-1/2 -translate-y-1/2 text-2xl md:text-3xl" aria-hidden="true">💰</div>
       <div class="text-center">
-        <div class="text-5xl mb-4">💰</div>
-        <h3 class="text-3xl font-bold mb-2 text-gray-900">US$ 1,000,000</h3>
-        <p class="text-xl opacity-90 text-gray-700">Premio para el equipo ganador global</p>
+        <h3 class="text-base md:text-lg font-bold text-gray-900">US$ 1,000,000</h3>
+        <p class="text-xs md:text-sm opacity-90 text-gray-700">Premio para el equipo ganador global</p>
       </div>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-      <div class="card p-4 shadow-lg hover:scale-105 transition-transform duration-300 flex items-start space-x-4">
-        <div class="bg-blue-100 text-blue-600 rounded-full p-2 mt-1">
+    <div class="grid grid-cols-1 gap-6">
+      <div class="bg-white relative p-4 md:p-5 rounded-xl shadow-lg hover:scale-105 transition-transform duration-300 h-20 md:h-24 flex items-center justify-center max-w-lg mx-auto">
+        <div class="bg-blue-100 text-blue-600 rounded-full p-2 absolute left-3 md:left-4" aria-hidden="true">
           <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
             <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
           </svg>
         </div>
-        <div>
-          <h4 class="font-semibold text-gray-900">Financiamiento inicial</h4>
-          <p class="text-gray-600">de $1 millón de dólares para lanzar tu startup</p>
+        <div class="text-center">
+          <h4 class="text-base md:text-lg font-semibold text-gray-900">Financiamiento inicial</h4>
+          <p class="text-xs md:text-sm text-gray-600">de $1 millón de dólares para lanzar tu startup</p>
         </div>
       </div>
 
-      <div class="card p-4 shadow-lg hover:scale-105 transition-transform duration-300 flex items-start space-x-4">
-        <div class="bg-blue-100 text-blue-600 rounded-full p-2 mt-1">
+      <div class="bg-white relative p-4 md:p-5 rounded-xl shadow-lg hover:scale-105 transition-transform duration-300 h-20 md:h-24 flex items-center justify-center max-w-lg mx-auto">
+        <div class="bg-blue-100 text-blue-600 rounded-full p-2 absolute left-3 md:left-4" aria-hidden="true">
           <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
             <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
           </svg>
         </div>
-        <div>
-          <h4 class="font-semibold text-gray-900">Red global de mentores</h4>
-          <p class="text-gray-600">Acceso a la red global de mentores y expertos de Hult Prize</p>
+        <div class="text-center">
+          <h4 class="text-base md:text-lg font-semibold text-gray-900">Red global de mentores</h4>
+          <p class="text-xs md:text-sm text-gray-600">Acceso a la red global de mentores y expertos de Hult Prize</p>
         </div>
       </div>
 
-      <div class="card p-4 shadow-lg hover:scale-105 transition-transform duration-300 flex items-start space-x-4">
-        <div class="bg-blue-100 text-blue-600 rounded-full p-2 mt-1">
+      <div class="bg-white relative p-4 md:p-5 rounded-xl shadow-lg hover:scale-105 transition-transform duration-300 h-20 md:h-24 flex items-center justify-center max-w-lg mx-auto">
+        <div class="bg-blue-100 text-blue-600 rounded-full p-2 absolute left-3 md:left-4" aria-hidden="true">
           <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
             <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
           </svg>
         </div>
-        <div>
-          <h4 class="font-semibold text-gray-900">Programa de aceleración</h4>
-          <p class="text-gray-600">Programa de aceleración en el castillo de Hult (Reino Unido)</p>
+        <div class="text-center">
+          <h4 class="text-base md:text-lg font-semibold text-gray-900">Programa de aceleración</h4>
+          <p class="text-xs md:text-sm text-gray-600">Programa de aceleración en el castillo de Hult (Reino Unido)</p>
         </div>
       </div>
 
-      <div class="card p-4 shadow-lg hover:scale-105 transition-transform duration-300 flex items-start space-x-4">
-        <div class="bg-blue-100 text-blue-600 rounded-full p-2 mt-1">
+      <div class="bg-white relative p-4 md:p-5 rounded-xl shadow-lg hover:scale-105 transition-transform duration-300 h-20 md:h-24 flex items-center justify-center max-w-lg mx-auto">
+        <div class="bg-blue-100 text-blue-600 rounded-full p-2 absolute left-3 md:left-4" aria-hidden="true">
           <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
             <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
           </svg>
         </div>
-        <div>
-          <h4 class="font-semibold text-gray-900">Exposición internacional</h4>
-          <p class="text-gray-600">Exposición mediática internacional y networking con líderes globales</p>
+        <div class="text-center">
+          <h4 class="text-base md:text-lg font-semibold text-gray-900">Exposición internacional</h4>
+          <p class="text-xs md:text-sm text-gray-600">Exposición mediática internacional y networking con líderes globales</p>
         </div>
       </div>
     </div>
@@ -142,100 +135,100 @@
 </section>
 
 <!-- Proceso de Competencia -->
-<section class="py-16 bg-gray-50 animate-fade-in">
+<section class="py-16 bg-gray-50">
   <div class="max-w-5xl mx-auto px-4 text-center">
     <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Proceso de Competencia</h2>
     <div class="w-24 h-1 bg-blue-600 mx-auto mb-8"></div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+    <div class="grid grid-cols-1 gap-4">
       <!-- Paso 1 -->
-      <div class="card p-6 shadow-lg hover:scale-105 transition-transform duration-300 text-center">
-        <div class="bg-blue-600 text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 text-xl font-bold">
-          1
+      <div class="bg-white relative p-4 md:p-5 rounded-xl shadow-lg hover:scale-105 transition-transform duration-300 h-20 md:h-24 flex items-center justify-center max-w-lg mx-auto">
+        <div class="absolute left-3 md:left-4 bg-blue-600 text-white rounded-full w-8 h-8 md:w-10 md:h-10 flex items-center justify-center text-xs md:text-sm font-bold" aria-hidden="true">1</div>
+        <div class="text-center">
+          <h3 class="text-base md:text-lg font-semibold text-gray-900">Campus Round</h3>
+          <p class="text-xs md:text-sm text-gray-600">Competencia a nivel universitario. Los mejores equipos avanzan a la siguiente etapa.</p>
         </div>
-        <h3 class="text-xl font-semibold text-gray-900 mb-3">Campus Round</h3>
-        <p class="text-gray-600">Competencia a nivel universitario. Los mejores equipos avanzan a la siguiente etapa.</p>
       </div>
 
       <!-- Paso 2 -->
-      <div class="card p-6 shadow-lg hover:scale-105 transition-transform duration-300 text-center">
-        <div class="bg-green-600 text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 text-xl font-bold">
-          2
+      <div class="bg-white relative p-4 md:p-5 rounded-xl shadow-lg hover:scale-105 transition-transform duration-300 h-20 md:h-24 flex items-center justify-center max-w-lg mx-auto">
+        <div class="absolute left-3 md:left-4 bg-green-600 text-white rounded-full w-8 h-8 md:w-10 md:h-10 flex items-center justify-center text-xs md:text-sm font-bold" aria-hidden="true">2</div>
+        <div class="text-center">
+          <h3 class="text-base md:text-lg font-semibold text-gray-900">Regional Summits</h3>
+          <p class="text-xs md:text-sm text-gray-600">Competencias regionales en diferentes ciudades del mundo. Equipos finalistas reciben mentoría intensiva.</p>
         </div>
-        <h3 class="text-xl font-semibold text-gray-900 mb-3">Regional Summits</h3>
-        <p class="text-gray-600">Competencias regionales en diferentes ciudades del mundo. Equipos finalistas reciben mentoría intensiva.</p>
       </div>
 
       <!-- Paso 3 -->
-      <div class="card p-6 shadow-lg hover:scale-105 transition-transform duration-300 text-center">
-        <div class="bg-purple-600 text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 text-xl font-bold">
-          3
+      <div class="bg-white relative p-4 md:p-5 rounded-xl shadow-lg hover:scale-105 transition-transform duration-300 h-20 md:h-24 flex items-center justify-center max-w-lg mx-auto">
+        <div class="absolute left-3 md:left-4 bg-purple-600 text-white rounded-full w-8 h-8 md:w-10 md:h-10 flex items-center justify-center text-xs md:text-sm font-bold" aria-hidden="true">3</div>
+        <div class="text-center">
+          <h3 class="text-base md:text-lg font-semibold text-gray-900">Accelerator</h3>
+          <p class="text-xs md:text-sm text-gray-600">Los finalistas globales participan en un programa de aceleración de verano en el Reino Unido.</p>
         </div>
-        <h3 class="text-xl font-semibold text-gray-900 mb-3">Accelerator</h3>
-        <p class="text-gray-600">Los finalistas globales participan en un programa de aceleración de verano en el Reino Unido.</p>
       </div>
 
       <!-- Paso 4 -->
-      <div class="card p-6 shadow-lg hover:scale-105 transition-transform duration-300 text-center">
-        <div class="bg-red-600 text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 text-xl font-bold">
-          4
+      <div class="bg-white relative p-4 md:p-5 rounded-xl shadow-lg hover:scale-105 transition-transform duration-300 h-20 md:h-24 flex items-center justify-center max-w-lg mx-auto">
+        <div class="absolute left-3 md:left-4 bg-red-600 text-white rounded-full w-8 h-8 md:w-10 md:h-10 flex items-center justify-center text-xs md:text-sm font-bold" aria-hidden="true">4</div>
+        <div class="text-center">
+          <h3 class="text-base md:text-lg font-semibold text-gray-900">Global Finals</h3>
+          <p class="text-xs md:text-sm text-gray-600">Los finalistas compiten por el premio de $1 millón de dólares en la cumbre global de las Naciones Unidas.</p>
         </div>
-        <h3 class="text-xl font-semibold text-gray-900 mb-3">Global Finals</h3>
-        <p class="text-gray-600">Los finalistas compiten por el premio de $1 millón de dólares en la cumbre global de las Naciones Unidas.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ¿Por qué participar? -->
-<section class="py-16 bg-white animate-fade-in">
+<section class="py-16 bg-white">
   <div class="max-w-xl mx-auto px-4 text-center">
     <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">¿Por qué participar?</h2>
     <div class="w-24 h-1 bg-blue-600 mx-auto mb-8"></div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <div class="grid grid-cols-1 gap-4">
       <!-- Beneficio 1 -->
-      <div class="card p-6 shadow-lg hover:scale-105 transition-transform duration-300 flex items-start space-x-4">
-        <div class="text-3xl">🚀</div>
-        <div>
-          <h4 class="text-lg font-semibold text-gray-900 mb-2">Lanza tu Startup</h4>
-          <p class="text-gray-600">Convierte tu idea en una empresa real con financiamiento y apoyo</p>
+      <div class="bg-white relative p-4 md:p-5 rounded-xl shadow-lg hover:scale-105 transition-transform duration-300 h-20 md:h-24 flex items-center justify-center max-w-lg mx-auto">
+        <div class="absolute left-3 md:left-4 text-2xl md:text-3xl" aria-hidden="true">🚀</div>
+        <div class="text-center">
+          <h4 class="text-base md:text-lg font-semibold text-gray-900">Innovación 🚀 Lanza tu Startup</h4>
+          <p class="text-xs md:text-sm text-gray-600">Convierte tu idea en una empresa real con financiamiento y apoyo</p>
         </div>
       </div>
 
       <!-- Beneficio 2 -->
-      <div class="card p-6 shadow-lg hover:scale-105 transition-transform duration-300 flex items-start space-x-4">
-        <div class="text-3xl">🌍</div>
-        <div>
-          <h4 class="text-lg font-semibold text-gray-900 mb-2">Impacto Global</h4>
-          <p class="text-gray-600">Resuelve problemas que afectan a millones de personas en el mundo</p>
+      <div class="bg-white relative p-4 md:p-5 rounded-xl shadow-lg hover:scale-105 transition-transform duration-300 h-20 md:h-24 flex items-center justify-center max-w-lg mx-auto">
+        <div class="absolute left-3 md:left-4 text-2xl md:text-3xl" aria-hidden="true">🌍</div>
+        <div class="text-center">
+          <h4 class="text-base md:text-lg font-semibold text-gray-900">Impacto Global</h4>
+          <p class="text-xs md:text-sm text-gray-600">Resuelve problemas que afectan a millones de personas en el mundo</p>
         </div>
       </div>
 
       <!-- Beneficio 3 -->
-      <div class="card p-6 shadow-lg hover:scale-105 transition-transform duration-300 flex items-start space-x-4">
-        <div class="text-3xl">💼</div>
-        <div>
-          <h4 class="text-lg font-semibold text-gray-900 mb-2">Desarrollo Profesional</h4>
-          <p class="text-gray-600">Aprende habilidades de emprendimiento, pitch y liderazgo</p>
+      <div class="bg-white relative p-4 md:p-5 rounded-xl shadow-lg hover:scale-105 transition-transform duration-300 h-20 md:h-24 flex items-center justify-center max-w-lg mx-auto">
+        <div class="absolute left-3 md:left-4 text-2xl md:text-3xl" aria-hidden="true">💼</div>
+        <div class="text-center">
+          <h4 class="text-base md:text-lg font-semibold text-gray-900">Desarrollo Profesional</h4>
+          <p class="text-xs md:text-sm text-gray-600">Aprende habilidades de emprendimiento, pitch y liderazgo</p>
         </div>
       </div>
 
       <!-- Beneficio 4 -->
-      <div class="card p-6 shadow-lg hover:scale-105 transition-transform duration-300 flex items-start space-x-4">
-        <div class="text-3xl">🤝</div>
-        <div>
-          <h4 class="text-lg font-semibold text-gray-900 mb-2">Red de Contactos</h4>
-          <p class="text-gray-600">Conoce a emprendedores, inversores y mentores de todo el mundo</p>
+      <div class="bg-white relative p-4 md:p-5 rounded-xl shadow-lg hover:scale-105 transition-transform duration-300 h-20 md:h-24 flex items-center justify-center max-w-lg mx-auto">
+        <div class="absolute left-3 md:left-4 text-2xl md:text-3xl" aria-hidden="true">🤝</div>
+        <div class="text-center">
+          <h4 class="text-base md:text-lg font-semibold text-gray-900">Red de Contactos</h4>
+          <p class="text-xs md:text-sm text-gray-600">Conoce a emprendedores, inversores y mentores de todo el mundo</p>
         </div>
       </div>
 
       <!-- Beneficio 5 -->
-      <div class="card p-6 shadow-lg hover:scale-105 transition-transform duration-300 flex items-start space-x-4">
-        <div class="text-3xl">🏆</div>
-        <div>
-          <h4 class="text-lg font-semibold text-gray-900 mb-2">Reconocimiento</h4>
-          <p class="text-gray-600">Gana prestigio internacional y fortalece tu CV profesional</p>
+      <div class="bg-white relative p-4 md:p-5 rounded-xl shadow-lg hover:scale-105 transition-transform duration-300 h-20 md:h-24 flex items-center justify-center max-w-lg mx-auto">
+        <div class="absolute left-3 md:left-4 text-2xl md:text-3xl" aria-hidden="true">🏆</div>
+        <div class="text-center">
+          <h4 class="text-base md:text-lg font-semibold text-gray-900">Reconocimiento</h4>
+          <p class="text-xs md:text-sm text-gray-600">Gana prestigio internacional y fortalece tu CV profesional</p>
         </div>
       </div>
     </div>
@@ -243,8 +236,9 @@
 </section>
 
 <!-- Sección debajo del hero que renderiza el formulario -->
-<section class="py-12 animate-fade-in">
+<section class="py-12">
   <div class="max-w-4xl mx-auto px-4">
     <app-registro-form></app-registro-form>
   </div>
 </section>
+</div>

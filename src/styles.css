@@ -1,114 +1,17 @@
-/* You can add global styles to this file, and also import other style files */
-
-/* Tailwind directives */
+/* Tailwind directives only - no custom CSS here */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Global styles (keep minimal, use Tailwind classes in templates) */
-html, body { height: 100%; }
 
-/* Global background color - light gray with dark text */
-body {
-  background: #f3f4f6; /* Tailwind gray-100 */
-  min-height: 100vh;
-  margin: 0;
-  color: #0b1220;
-}
+/* Registro form styles removed — using Tailwind utilities in templates */
 
-/* Animations */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+/* Workaround: map la utilidad text-green-600 a un color concreto
+	 (temporal — usar solo mientras investigamos por qué Tailwind no
+	 está incluyendo esa utilidad en el CSS compilado). */
 
-@keyframes slideDown {
-  from {
-    transform: translateY(-100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
 
-@keyframes bounceIn {
-  0% {
-    transform: scale(0.3);
-    opacity: 0;
-  }
-  50% {
-    transform: scale(1.05);
-  }
-  70% {
-    transform: scale(0.9);
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
+/* Parche temporal: asegurar que los componentes muestren el color verde */
+/* Parche temporal eliminado: Tailwind debe generar estas utilidades. */
 
-@keyframes slideUp {
-  from {
-    transform: translateY(50px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
 
-.animate-slide-up {
-  animation: slideUp 0.8s ease-out forwards;
-  opacity: 0;
-}
-
-.animate-slide-down {
-  animation: slideDown 0.6s ease-out forwards;
-}
-
-.animate-bounce-in {
-  animation: bounceIn 0.8s ease-out forwards;
-}
-
-/* Card utility: white box with border, shadow, and hover animation */
-.card {
-  background: #ffffff;
-  border: 1px solid #e5e7eb; /* gray-200 */
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.06); /* slate-900 alpha */
-  transition: transform 300ms ease, box-shadow 300ms ease;
-  overflow: hidden;
-}
-
-.card:hover {
-  transform: scale(1.03);
-  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.12);
-}
-
-.card--tight {
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.05);
-}
-
-.card--ghost {
-  background: #ffffff;
-  border-color: #eef2f7;
-}
-
-.card-title {
-  color: #0f172a; /* slate-900 */
-}
-
-.card-text {
-  color: #475569; /* slate-600 */
-}
