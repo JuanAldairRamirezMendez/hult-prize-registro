@@ -8,12 +8,12 @@
 /* Global styles (keep minimal, use Tailwind classes in templates) */
 html, body { height: 100%; }
 
-/* Global background color - solid blue */
+/* Global background color - light gray with dark text */
 body {
-	background: #2563eb;
-	min-height: 100vh;
-	margin: 0;
-	color: #fff;
+  background: #f3f4f6; /* Tailwind gray-100 */
+  min-height: 100vh;
+  margin: 0;
+  color: #0b1220;
 }
 
 /* Animations */
@@ -78,4 +78,36 @@ body {
 
 .animate-bounce-in {
   animation: bounceIn 0.8s ease-out forwards;
+}
+
+/* Card utility: white box with border, shadow, and hover animation */
+.card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb; /* gray-200 */
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.06); /* slate-900 alpha */
+  transition: transform 300ms ease, box-shadow 300ms ease;
+}
+
+.card:hover {
+  transform: scale(1.03) rotate(3deg);
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.12);
+}
+
+.card--tight {
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.05);
+}
+
+.card--ghost {
+  background: #ffffff;
+  border-color: #eef2f7;
+}
+
+.card-title {
+  color: #0f172a; /* slate-900 */
+}
+
+.card-text {
+  color: #475569; /* slate-600 */
 }
