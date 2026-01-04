@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-landing',
@@ -34,7 +35,7 @@ export class LandingComponent implements OnInit {
     '17. Alianzas para lograr los objetivos'
   ];
 
-  constructor(private fb: FormBuilder, private router: Router) {
+  constructor(private fb: FormBuilder, private router: Router, private http: HttpClient) {
     this.form = this.fb.group({
       teamName: ['', [Validators.required, Validators.minLength(2)]],
       leaderName: ['', [Validators.required, Validators.minLength(2)]],
@@ -57,12 +58,34 @@ export class LandingComponent implements OnInit {
       return;
     }
     this.loading = true;
-    // Simular envío
-    setTimeout(() => {
-      this.loading = false;
-      this.success = true;
-      // mantener en la misma página (el formulario está en esta vista)
-    }, 1200);
+
+    const payload = {
+      teamName: this.form.value.teamName,
+      leaderName: this.form.value.leaderName,
+      email: this.form.value.email,
+      phone: this.form.value.phone,
+      members: this.form.value.members,
+      projectName: this.form.value.projectName,
+      category: this.form.value.category,
+      description: this.form.value.description
+    };
+
+    // Ajusta la URL si tu backend corre en otro host/puerto
+    const url = 'http://localhost:3000/registro';
+
+    this.http.post(url, payload).subscribe({
+      next: (res: any) => {
+        this.loading = false;
+        this.success = true;
+        // opcional: limpiar form
+        this.form.reset({ members: 1 });
+      },
+      error: (err) => {
+        console.error('Error al enviar registro', err);
+        this.loading = false;
+        this.errorMessage = err?.error?.message || 'Error al enviar el registro';
+      }
+    });
   }
 
   scrollToRegister(event: Event) {
