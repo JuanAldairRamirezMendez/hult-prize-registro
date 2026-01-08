@@ -8,7 +8,7 @@
       class="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start"
     >
       <a
-        class="text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase text-white"
+        class="text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase text-white cursor-pointer"
         [routerLink]="['/landing']"
         >HULT PRIZE UTP</a
       ><button
@@ -26,7 +26,7 @@
       <ul class="flex flex-col lg:flex-row list-none mr-auto">
         <li class="flex items-center">
           <a
-            class="lg:text-white lg:hover:text-gray-300 text-gray-800 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
+            class="lg:text-white lg:hover:text-gray-300 text-gray-800 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold cursor-pointer"
             [routerLink]="['/landing']"
             ><i
               class="lg:text-gray-300 text-gray-500 far fa-file-alt text-lg leading-lg mr-2"
@@ -34,36 +34,51 @@
             Inicio</a
           >
         </li>
+        <li class="flex items-center">
+          <a
+            class="lg:text-white lg:hover:text-gray-300 text-gray-800 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold cursor-pointer"
+            [routerLink]="['/landing']"
+            [fragment]="'sponsor'"
+            (click)="scrollToSponsor($event)"
+            ><i
+              class="lg:text-gray-300 text-gray-500 fas fa-handshake text-lg leading-lg mr-2"
+            ></i>
+            Patrocinar</a
+          >
+        </li>
       </ul>
       <ul class="flex flex-col lg:flex-row list-none lg:ml-auto">
         <li class="flex items-center">
           <a
-            class="lg:text-white lg:hover:text-gray-300 text-gray-800 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
-            href="#pablo"
+            class="lg:text-white lg:hover:text-gray-300 text-gray-800 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold cursor-pointer"
+            href="https://www.instagram.com/hultprize_utp?igsh=NHlib3YzcHRxazN6"
+            title="Instagram"
             ><i
-              class="lg:text-gray-300 text-gray-500 fab fa-facebook text-lg leading-lg "
+              class="lg:text-gray-300 text-gray-500 fab fa-instagram text-lg leading-lg "
             ></i
-            ><span class="lg:hidden inline-block ml-2">Share</span></a
+            ><span class="lg:hidden inline-block ml-2">Instagram</span></a
           >
         </li>
         <li class="flex items-center">
           <a
-            class="lg:text-white lg:hover:text-gray-300 text-gray-800 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
-            href="#pablo"
+            class="lg:text-white lg:hover:text-gray-300 text-gray-800 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold cursor-pointer"
+            href="https://www.linkedin.com/in/hultprize-utp/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+            title="LinkedIn"
             ><i
-              class="lg:text-gray-300 text-gray-500 fab fa-twitter text-lg leading-lg "
+              class="lg:text-gray-300 text-gray-500 fab fa-linkedin text-lg leading-lg "
             ></i
-            ><span class="lg:hidden inline-block ml-2">Tweet</span></a
+            ><span class="lg:hidden inline-block ml-2">LinkedIn</span></a
           >
         </li>
         <li class="flex items-center">
           <a
-            class="lg:text-white lg:hover:text-gray-300 text-gray-800 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
-            href="#pablo"
+            class="lg:text-white lg:hover:text-gray-300 text-gray-800 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold cursor-pointer"
+            href="https://www.tiktok.com/@hultprizeutp"
+            title="TikTok"
             ><i
-              class="lg:text-gray-300 text-gray-500 fab fa-github text-lg leading-lg "
+              class="lg:text-gray-300 text-gray-500 fab fa-tiktok text-lg leading-lg "
             ></i
-            ><span class="lg:hidden inline-block ml-2">Star</span></a
+            ><span class="lg:hidden inline-block ml-2">TikTok</span></a
           >
         </li>
         <li class="flex items-center">

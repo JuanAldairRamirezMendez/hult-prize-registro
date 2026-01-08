@@ -10,9 +10,13 @@ import { HttpClient } from '@angular/common/http';
 export class LandingComponent implements OnInit {
 
   form: FormGroup;
+  sponsorForm: FormGroup;
   loading = false;
   success = false;
   errorMessage = '';
+  sponsorLoading = false;
+  sponsorSuccess = false;
+  sponsorError = '';
 
   // Lista de los 17 ODS en español
   categories: string[] = [
@@ -40,15 +44,57 @@ export class LandingComponent implements OnInit {
       teamName: ['', [Validators.required, Validators.minLength(2)]],
       leaderName: ['', [Validators.required, Validators.minLength(2)]],
       email: ['', [Validators.required, Validators.email]],
-      phone: [''],
-      members: [1, [Validators.min(1), Validators.max(20)]],
+      phone: ['', [Validators.pattern('^\\d{0,9}$')]],
+      members: [2, [Validators.min(2), Validators.max(4)]],
       projectName: [''],
       category: ['', Validators.required],
       description: ['', [Validators.required, Validators.minLength(20), Validators.maxLength(1000)]]
     });
+
+    // Inicializar formulario de sponsors
+    this.sponsorForm = this.fb.group({
+      name: ['', [Validators.required, Validators.minLength(2)]],
+      contactName: ['', [Validators.required, Validators.minLength(2)]],
+      email: ['', [Validators.required, Validators.email]],
+      phone: [''],
+      website: [''],
+      message: ['']
+    });
   }
 
   ngOnInit() {
+  }
+
+  submitSponsor() {
+    this.sponsorError = '';
+    if (this.sponsorForm.invalid) {
+      this.sponsorForm.markAllAsTouched();
+      return;
+    }
+    this.sponsorLoading = true;
+
+    const payload = {
+      name: this.sponsorForm.value.name,
+      contactName: this.sponsorForm.value.contactName,
+      email: this.sponsorForm.value.email,
+      phone: this.sponsorForm.value.phone,
+      website: this.sponsorForm.value.website,
+      message: this.sponsorForm.value.message
+    };
+
+    const url = 'http://localhost:3000/sponsors';
+    this.http.post(url, payload).subscribe({
+      next: (res: any) => {
+        this.sponsorLoading = false;
+        this.sponsorSuccess = true;
+        this.sponsorForm.reset();
+      },
+      error: (err) => {
+        console.error('Error al enviar sponsor', err);
+        this.sponsorLoading = false;
+        this.sponsorError = err?.error?.message || 'Error al enviar la solicitud';
+      }
+    });
   }
 
   onSubmit() {
