@@ -133,21 +133,21 @@ Instagram: <a href="https://www.instagram.com/creativetimofficial/" target="_bla
 
 ## Local development notes
 
-This project requires Node.js 18 for a reproducible build (tooling is based on Angular v11). Recommended steps:
+This project builds reliably with Node.js 16 (tooling is Angular v11). Recommended steps:
 
- - Install and use Node 18 with nvm:
+- Install and use Node 16 with nvm:
 
- ```bash
- nvm install 18
- nvm use 18
- ```
+```bash
+nvm install 16
+nvm use 16
+```
 
- - From the repo root run the build for the landing app:
+- From the repo root run the build for the landing app:
 
- ```bash
- cd frotend/hult-prize-registro/user
- npm ci
- npm run build -- --configuration production
- ```
+```bash
+cd frotend/hult-prize-registro/user
+npm ci
+npm run build -- --configuration production
+```
 
-If you prefer, the project includes a `.nvmrc` file to select Node 18 automatically with `nvm use`.
+The project includes a `.nvmrc` file to select Node 16 automatically with `nvm use`.
