@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 
@@ -9,8 +9,8 @@ import { HttpClient } from '@angular/common/http';
 })
 export class LandingComponent implements OnInit {
 
-  form: FormGroup;
-  sponsorForm: FormGroup;
+  form: UntypedFormGroup;
+  sponsorForm: UntypedFormGroup;
   loading = false;
   success = false;
   errorMessage = '';
@@ -39,7 +39,7 @@ export class LandingComponent implements OnInit {
     '17. Alianzas para lograr los objetivos'
   ];
 
-  constructor(private fb: FormBuilder, private router: Router, private http: HttpClient) {
+  constructor(private fb: UntypedFormBuilder, private router: Router, private http: HttpClient) {
     this.form = this.fb.group({
       teamName: ['', [Validators.required, Validators.minLength(2)]],
       leaderName: ['', [Validators.required, Validators.minLength(2)]],
