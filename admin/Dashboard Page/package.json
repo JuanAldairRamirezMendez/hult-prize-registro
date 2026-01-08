@@ -1,10 +1,13 @@
 {
   "name": "angular-login-page",
   "version": "1.1.0",
+  "engines": {
+    "node": ">=16"
+  },
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
+    "start": "NODE_OPTIONS=--openssl-legacy-provider ng serve --host 0.0.0.0 --port 4201",
+    "build": "NODE_OPTIONS=--openssl-legacy-provider ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -21,6 +24,8 @@
     "@angular/router": "11.2.6",
     "@fortawesome/fontawesome-free": "5.15.3",
     "@popperjs/core": "2.9.1",
+    "chart.js": "2.9.4",
+    "postcss": "8.4.14",
     "rxjs": "6.6.6",
     "tslib": "^2.1.0",
     "zone.js": "0.11.4"
@@ -30,9 +35,9 @@
     "@angular/cli": "11.2.5",
     "@angular/compiler-cli": "11.2.6",
     "@angular/language-service": "11.2.6",
-    "@types/node": "14.14.35",
     "@types/jasmine": "3.6.7",
     "@types/jasminewd2": "2.0.8",
+    "@types/node": "14.14.35",
     "codelyzer": "^6.0.1",
     "jasmine-core": "3.7.1",
     "jasmine-spec-reporter": "6.0.0",
@@ -45,5 +50,8 @@
     "ts-node": "9.1.1",
     "tslint": "6.1.3",
     "typescript": "4.0.7"
+  },
+  "overrides": {
+    "postcss": "8.4.14"
   }
 }
