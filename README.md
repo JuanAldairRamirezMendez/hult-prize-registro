@@ -130,3 +130,24 @@ Instagram: <a href="https://www.instagram.com/creativetimofficial/" target="_bla
 - Documentation: <a href="https://www.creative-tim.com/learning-lab/tailwind-starter-kit/#/documentation/quick-start?ref=tsk-readme" target="_blank">https://www.creative-tim.com/learning-lab/tailwind-starter-kit/#/documentation/quick-start?ref=tsk-readme</a>
 - Support: <a href="https://www.creative-tim.com/contact-us?ref=tsk-readme" target="_blank">https://www.creative-tim.com/contact-us?ref=tsk-readme</a>
 - Issues: <a href="https://github.com/creativetimofficial/tailwind-starter-kit/issues" target="_blank">Github Issues Page</a>
+
+## Local development notes
+
+This project requires Node.js 18 for a reproducible build (tooling is based on Angular v11). Recommended steps:
+
+ - Install and use Node 18 with nvm:
+
+ ```bash
+ nvm install 18
+ nvm use 18
+ ```
+
+ - From the repo root run the build for the landing app:
+
+ ```bash
+ cd frotend/hult-prize-registro/user
+ npm ci
+ npm run build -- --configuration production
+ ```
+
+If you prefer, the project includes a `.nvmrc` file to select Node 18 automatically with `nvm use`.
