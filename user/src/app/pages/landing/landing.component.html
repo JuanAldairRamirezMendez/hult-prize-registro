@@ -452,8 +452,8 @@
 
                   <fieldset class="space-y-1">
                     <label for="phone" class="block text-sm font-medium text-gray-700">Teléfono</label>
-                    <input id="phone" formControlName="phone" type="tel" placeholder="999 999 999" class="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full" />
-                    <p role="alert" class="text-red-500 text-xs" *ngIf="form.get('phone')?.invalid && (form.get('phone')?.touched || form.get('phone')?.dirty)">Teléfono inválido — se requieren al menos 9 dígitos numéricos si se ingresa.</p>
+                    <input id="phone" formControlName="phone" type="tel" placeholder="999999999" class="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full" />
+                    <p role="alert" class="text-red-500 text-xs" *ngIf="form.get('phone')?.invalid && (form.get('phone')?.touched || form.get('phone')?.dirty)">Teléfono inválido — se requieren exactamente 9 dígitos numéricos.</p>
                   </fieldset>
 
                   <fieldset class="space-y-1">

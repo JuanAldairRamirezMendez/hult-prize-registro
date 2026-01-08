@@ -68,7 +68,7 @@ export class LandingComponent implements OnInit {
       const v: string = control.value || '';
       if (!v) return null; // allow empty
       const digits = (v.match(/\d/g) || []).length;
-      return digits >= minDigits ? null : { phoneDigits: { required: minDigits, actual: digits } };
+      return digits === minDigits ? null : { phoneDigits: { required: minDigits, actual: digits } };
     };
   }
 
