@@ -3,6 +3,6 @@
   "version": "0.0.0",
   "private": true,
   "engines": {
-    "node": "16.x"
+    "node": "18.x"
   }
 }
