@@ -82,19 +82,30 @@ export class LandingComponent implements OnInit {
       message: this.sponsorForm.value.message
     };
 
-    const url = 'http://localhost:3000/sponsors';
-    this.http.post(url, payload).subscribe({
-      next: (res: any) => {
+    // Leer la URL del backend desde /assets/config.json en tiempo de ejecución
+    fetch('/assets/config.json')
+      .then(res => res.json())
+      .then(cfg => {
+        const base = cfg?.BACKEND_URL || 'http://localhost:3000';
+        const url = base.replace(/\/$/, '') + '/sponsors';
+        this.http.post(url, payload).subscribe({
+          next: (res: any) => {
+            this.sponsorLoading = false;
+            this.sponsorSuccess = true;
+            this.sponsorForm.reset();
+          },
+          error: (err) => {
+            console.error('Error al enviar sponsor', err);
+            this.sponsorLoading = false;
+            this.sponsorError = err?.error?.message || 'Error al enviar la solicitud';
+          }
+        });
+      })
+      .catch(err => {
+        console.error('No se pudo leer config.json', err);
         this.sponsorLoading = false;
-        this.sponsorSuccess = true;
-        this.sponsorForm.reset();
-      },
-      error: (err) => {
-        console.error('Error al enviar sponsor', err);
-        this.sponsorLoading = false;
-        this.sponsorError = err?.error?.message || 'Error al enviar la solicitud';
-      }
-    });
+        this.sponsorError = 'No se pudo determinar la URL del servidor';
+      });
   }
 
   onSubmit() {
@@ -116,22 +127,31 @@ export class LandingComponent implements OnInit {
       description: this.form.value.description
     };
 
-    // Ajusta la URL si tu backend corre en otro host/puerto
-    const url = 'http://localhost:3000/registro';
-
-    this.http.post(url, payload).subscribe({
-      next: (res: any) => {
+    // Leer la URL del backend desde /assets/config.json en tiempo de ejecución
+    fetch('/assets/config.json')
+      .then(res => res.json())
+      .then(cfg => {
+        const base = cfg?.BACKEND_URL || 'http://localhost:3000';
+        const url = base.replace(/\/$/, '') + '/registro';
+        this.http.post(url, payload).subscribe({
+          next: (res: any) => {
+            this.loading = false;
+            this.success = true;
+            // opcional: limpiar form
+            this.form.reset({ members: 1 });
+          },
+          error: (err) => {
+            console.error('Error al enviar registro', err);
+            this.loading = false;
+            this.errorMessage = err?.error?.message || 'Error al enviar el registro';
+          }
+        });
+      })
+      .catch(err => {
+        console.error('No se pudo leer config.json', err);
         this.loading = false;
-        this.success = true;
-        // opcional: limpiar form
-        this.form.reset({ members: 1 });
-      },
-      error: (err) => {
-        console.error('Error al enviar registro', err);
-        this.loading = false;
-        this.errorMessage = err?.error?.message || 'Error al enviar el registro';
-      }
-    });
+        this.errorMessage = 'No se pudo determinar la URL del servidor';
+      });
   }
 
   scrollToRegister(event: Event) {
