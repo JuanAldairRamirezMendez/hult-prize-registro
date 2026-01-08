@@ -468,12 +468,14 @@
                   </fieldset>
 
                   <fieldset class="space-y-1">
-                    <label for="category" class="block text-sm font-medium text-gray-700">Categoría de impacto</label>
-                    <select id="category" formControlName="category" class="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full z-50" style="position: relative;">
-                      <option value="" disabled>Selecciona una categoría</option>
-                      <option *ngFor="let c of categories" [value]="c" [attr.style]="'color: #374151;'">{{ c }}</option>
-                    </select>
-                    <p role="alert" class="text-red-500 text-xs" *ngIf="form.get('category')?.invalid && (form.get('category')?.touched || form.get('category')?.dirty)">Selecciona una categoría.</p>
+                    <label class="block text-sm font-medium text-gray-700">Categoría de impacto (selecciona 1–3 ODS)</label>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-2 mt-2">
+                      <label *ngFor="let c of categories" class="inline-flex items-center space-x-2">
+                        <input type="checkbox" [checked]="isCategorySelected(c)" (change)="toggleCategory(c)" [disabled]="!isCategorySelected(c) && (form.get('category')?.value?.length >= 3)" class="form-checkbox h-4 w-4 text-gray-800" />
+                        <span class="text-sm text-gray-700">{{ c }}</span>
+                      </label>
+                    </div>
+                    <p role="alert" class="text-red-500 text-xs" *ngIf="form.get('category')?.errors?.categoryCount && (form.get('category')?.touched || form.get('category')?.dirty)">Selecciona entre 1 y 3 categorías.</p>
                   </fieldset>
 
                   <fieldset class="space-y-1">

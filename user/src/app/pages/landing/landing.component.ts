@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators, AbstractControl, ValidatorFn } from '@angular/forms';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 
@@ -47,7 +47,7 @@ export class LandingComponent implements OnInit {
       phone: ['', [Validators.pattern('^\\d{0,9}$')]],
       members: [2, [Validators.min(2), Validators.max(4)]],
       projectName: [''],
-      category: ['', Validators.required],
+      category: [[], this.categoryValidator(1, 3)],
       description: ['', [Validators.required, Validators.minLength(20), Validators.maxLength(1000)]]
     });
 
@@ -60,6 +60,40 @@ export class LandingComponent implements OnInit {
       website: [''],
       message: ['']
     });
+  }
+
+  categoryValidator(min: number, max: number): ValidatorFn {
+    return (control: AbstractControl) => {
+      const v = control.value || [];
+      if (!Array.isArray(v)) {
+        return { categoryCount: true };
+      }
+      if (v.length < min || v.length > max) {
+        return { categoryCount: true };
+      }
+      return null;
+    };
+  }
+
+  isCategorySelected(cat: string) {
+    const arr = this.form.get('category')?.value || [];
+    return Array.isArray(arr) && arr.includes(cat);
+  }
+
+  toggleCategory(cat: string) {
+    const control = this.form.get('category');
+    if (!control) return;
+    const arr = Array.isArray(control.value) ? [...control.value] : [];
+    const idx = arr.indexOf(cat);
+    if (idx > -1) {
+      arr.splice(idx, 1);
+    } else {
+      if (arr.length >= 3) return;
+      arr.push(cat);
+    }
+    control.setValue(arr);
+    control.markAsTouched();
+    control.updateValueAndValidity();
   }
 
   ngOnInit() {

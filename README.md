@@ -133,21 +133,82 @@ Instagram: <a href="https://www.instagram.com/creativetimofficial/" target="_bla
 
 ## Local development notes
 
-This project builds reliably with Node.js 16 (tooling is Angular v11). Recommended steps:
+## Local development notes
 
-- Install and use Node 16 with nvm:
+Nota rápida del proyecto:
+
+- Frontend principal (landing) está en: `frotend/hult-prize-registro/user` (proyecto Angular: `angular-landing-page`).
+- Resultado de la build de producción: `frotend/hult-prize-registro/user/dist/angular-landing-page`.
+
+Tooling y recomendaciones:
+
+- Toolchain: el proyecto fue actualizado a Angular 16 para soportar entornos modernos (por ejemplo Node 24 en Render). Para compatibilidad local con entornos antiguos se mantiene referencia a Node 16.
+- Archivo de configuración en tiempo de ejecución: `src/assets/config.json` — se genera en la fase de build por el script `user/scripts/generate-config.js` a partir de la variable de entorno `BACKEND_URL`.
+- `prebuild`: en `user/package.json` existe un script `prebuild` que ejecuta el generador antes de compilar.
+
+Comandos recomendados (desde la raíz del repositorio):
+
+1) Instalar dependencias y construir (recomendado para CI/Render — instala devDependencies necesarias):
+
+```bash
+cd frotend/hult-prize-registro/user
+npm ci --include=dev
+npm run build -- --configuration production
+```
+
+2) Comandos rápidos para desarrollo local (si usa `nvm` y quiere Node 16):
 
 ```bash
 nvm install 16
 nvm use 16
-```
-
-- From the repo root run the build for the landing app:
-
-```bash
 cd frotend/hult-prize-registro/user
 npm ci
 npm run build -- --configuration production
 ```
 
-The project includes a `.nvmrc` file to select Node 16 automatically with `nvm use`.
+Despliegue en Render (sugerencia):
+
+- Build Command (si usa raíz del repo):
+
+```bash
+cd frotend/hult-prize-registro/user && npm ci --include=dev && npm run build -- --configuration production
+```
+
+- Publish Directory (configurar en Render):
+
+```
+frotend/hult-prize-registro/user/dist/angular-landing-page
+```
+
+- Variables de entorno recomendadas en Render:
+
+```
+BACKEND_URL=https://hult-prize-registro-backend.onrender.com
+NODE_ENV=production
+NODE_VERSION=24
+```
+
+Notas de implementación recientes (útil para mantenedores):
+
+- `BACKEND_URL` ahora se inyecta en tiempo de build en `src/assets/config.json` usando `user/scripts/generate-config.js`.
+- Se agregó validación y cambio de UI para el campo `category`: ahora es un multi-select por checkbox con límite de 1 a 3 selecciones.
+- Se corrigió el posicionamiento del SVG del footer para que no oculte botones (ajuste de `z-index` y clases CSS).
+
+Sugerencia para git (ejemplo desde la raíz del repo):
+
+```bash
+git add frotend/hult-prize-registro/user/scripts/generate-config.js \
+	frotend/hult-prize-registro/user/package.json \
+	frotend/hult-prize-registro/user/src/assets/config.json \
+	frotend/hult-prize-registro/user/src/app/pages/landing/landing.component.ts \
+	frotend/hult-prize-registro/user/src/app/pages/landing/landing.component.html \
+	frotend/hult-prize-registro/user/src/app/components/footer/footer.component.html
+git commit -m "chore(frontend): runtime BACKEND_URL, prebuild, category multi-select (1-3), footer z-index fix"
+git push origin main
+```
+
+Comprobación posterior:
+
+- Asegúrese de que el backend permita las solicitudes CORS desde el dominio del frontend; de lo contrario ajuste el servidor (p. ej. `cors()` o configuración de orígenes permitidos).
+
+Si quiere, puedo ejecutar la build localmente ahora y confirmar los artefactos generados.
