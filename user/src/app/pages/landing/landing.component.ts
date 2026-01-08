@@ -44,7 +44,8 @@ export class LandingComponent implements OnInit {
       teamName: ['', [Validators.required, Validators.minLength(2)]],
       leaderName: ['', [Validators.required, Validators.minLength(2)]],
       email: ['', [Validators.required, Validators.email]],
-      phone: ['', [Validators.pattern('^\\d{0,9}$')]],
+      // phone: optional, but if provided must contain at least 9 digits
+      phone: ['', [this.phoneDigitsValidator(9)]],
       members: [2, [Validators.min(2), Validators.max(4)]],
       projectName: [''],
       category: [[], this.categoryValidator(1, 3)],
@@ -60,6 +61,15 @@ export class LandingComponent implements OnInit {
       website: [''],
       message: ['']
     });
+  }
+
+  phoneDigitsValidator(minDigits: number): ValidatorFn {
+    return (control: AbstractControl) => {
+      const v: string = control.value || '';
+      if (!v) return null; // allow empty
+      const digits = (v.match(/\d/g) || []).length;
+      return digits >= minDigits ? null : { phoneDigits: { required: minDigits, actual: digits } };
+    };
   }
 
   categoryValidator(min: number, max: number): ValidatorFn {
