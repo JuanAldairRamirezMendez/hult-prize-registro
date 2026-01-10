@@ -137,6 +137,13 @@ export class LandingComponent implements OnInit {
             this.sponsorLoading = false;
             this.sponsorSuccess = true;
             this.sponsorForm.reset();
+            // Abrir enlace de WhatsApp para sponsors tras envío exitoso
+            try {
+              const whatsappUrl = 'https://chat.whatsapp.com/KoXwPMGhlhTK5OxScoBt4i';
+              window.open(whatsappUrl, '_blank');
+            } catch (e) {
+              console.error('No se pudo abrir el enlace de WhatsApp', e);
+            }
           },
           error: (err) => {
             console.error('Error al enviar sponsor', err);
@@ -183,6 +190,13 @@ export class LandingComponent implements OnInit {
             this.success = true;
             // opcional: limpiar form
             this.form.reset({ members: 1 });
+            // Abrir el enlace del grupo de WhatsApp automáticamente después del envío
+            try {
+              const whatsappUrl = 'https://chat.whatsapp.com/LqKQ0aNYq1L6icXhfX5i25';
+              window.open(whatsappUrl, '_blank');
+            } catch (e) {
+              console.error('No se pudo abrir el enlace de WhatsApp', e);
+            }
           },
           error: (err) => {
             console.error('Error al enviar registro', err);
