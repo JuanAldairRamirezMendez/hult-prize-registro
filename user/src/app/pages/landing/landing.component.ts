@@ -14,6 +14,10 @@ export class LandingComponent implements OnInit {
   loading = false;
   success = false;
   errorMessage = '';
+  // Estado de verificación del código de estudiante
+  studentVerificationLoading = false;
+  studentVerificationSent = false;
+  studentVerificationError = '';
   sponsorLoading = false;
   sponsorSuccess = false;
   sponsorError = '';
@@ -43,7 +47,9 @@ export class LandingComponent implements OnInit {
     this.form = this.fb.group({
       teamName: ['', [Validators.required, Validators.minLength(2)]],
       leaderName: ['', [Validators.required, Validators.minLength(2)]],
-      email: ['', [Validators.required, Validators.email]],
+      // Código de estudiante (de un miembro del equipo)
+      studentCode: ['', [Validators.required, Validators.pattern(/^u\d{6,}$/i)]],
+      email: ['', [Validators.required, Validators.email, this.utpEmailValidator()]],
       // phone: optional, but if provided must contain at least 9 digits
       phone: ['', [this.phoneDigitsValidator(9)]],
       members: [2, [Validators.min(2), Validators.max(4)]],
@@ -85,6 +91,15 @@ export class LandingComponent implements OnInit {
     };
   }
 
+  // Validador que exige dominio institucional @utp.edu.pe
+  utpEmailValidator(): ValidatorFn {
+    return (control: AbstractControl) => {
+      const v: string = (control.value || '').toString();
+      if (!v) return null; // dejar a Validators.required manejar vacío
+      return v.toLowerCase().endsWith('@utp.edu.pe') ? null : { utpDomain: true };
+    };
+  }
+
   isCategorySelected(cat: string) {
     const arr = this.form.get('category')?.value || [];
     return Array.isArray(arr) && arr.includes(cat);
@@ -107,6 +122,43 @@ export class LandingComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  // Enviar correo de verificación al email asociado al código de estudiante
+  verifyStudentCode() {
+    this.studentVerificationError = '';
+    this.studentVerificationSent = false;
+    const control = this.form.get('studentCode');
+    if (!control) return;
+    if (control.invalid) return;
+    const studentCode = (control.value || '').toString().trim();
+    if (!studentCode) return;
+
+    const studentEmail = `${studentCode.toLowerCase()}@utp.edu.pe`;
+    this.studentVerificationLoading = true;
+
+    fetch('/assets/config.json')
+      .then(res => res.json())
+      .then(cfg => {
+        const base = cfg?.BACKEND_URL || 'http://localhost:3000';
+        const url = base.replace(/\/$/, '') + '/verify-student';
+        this.http.post(url, { studentCode, studentEmail }).subscribe({
+          next: (res: any) => {
+            this.studentVerificationLoading = false;
+            this.studentVerificationSent = true;
+          },
+          error: (err) => {
+            console.error('Error al solicitar verificación de estudiante', err);
+            this.studentVerificationLoading = false;
+            this.studentVerificationError = err?.error?.message || 'No se pudo enviar el correo de verificación';
+          }
+        });
+      })
+      .catch(err => {
+        console.error('No se pudo leer config.json', err);
+        this.studentVerificationLoading = false;
+        this.studentVerificationError = 'No se pudo determinar la URL del servidor';
+      });
   }
 
   submitSponsor() {
@@ -170,6 +222,7 @@ export class LandingComponent implements OnInit {
     const payload = {
       teamName: this.form.value.teamName,
       leaderName: this.form.value.leaderName,
+      studentCode: this.form.value.studentCode,
       email: this.form.value.email,
       phone: this.form.value.phone,
       members: this.form.value.members,
@@ -188,8 +241,8 @@ export class LandingComponent implements OnInit {
           next: (res: any) => {
             this.loading = false;
             this.success = true;
-            // opcional: limpiar form
-            this.form.reset({ members: 1 });
+            // opcional: limpiar form (restablecer studentCode también)
+            this.form.reset({ members: 1, studentCode: '' });
             // Abrir el enlace del grupo de WhatsApp automáticamente después del envío
             try {
               const whatsappUrl = 'https://chat.whatsapp.com/LqKQ0aNYq1L6icXhfX5i25';

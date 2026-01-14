@@ -445,9 +445,21 @@
                   </fieldset>
 
                   <fieldset class="space-y-1">
+                    <label for="studentCode" class="block text-sm font-medium text-gray-700">Código de estudiante (de un miembro del equipo)</label>
+                    <input id="studentCode" formControlName="studentCode" type="text" placeholder="u20201597" class="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full" (blur)="verifyStudentCode()" />
+                    <p role="alert" class="text-red-500 text-xs" *ngIf="form.get('studentCode')?.errors?.required && (form.get('studentCode')?.touched || form.get('studentCode')?.dirty)">El código de estudiante es obligatorio.</p>
+                    <p role="alert" class="text-red-500 text-xs" *ngIf="form.get('studentCode')?.errors?.pattern && (form.get('studentCode')?.touched || form.get('studentCode')?.dirty)">Formato de código inválido (ej. u20201597).</p>
+                    <p *ngIf="studentVerificationLoading" class="text-sm text-gray-500">Enviando correo de comprobación a {{ (form.get('studentCode')?.value || '') + '@utp.edu.pe' }}...</p>
+                    <p *ngIf="studentVerificationSent" class="text-sm text-green-600">Correo de comprobación enviado a {{ (form.get('studentCode')?.value || '') + '@utp.edu.pe' }}. Revisa tu bandeja.</p>
+                    <p *ngIf="studentVerificationError" class="text-sm text-red-500">{{ studentVerificationError }}</p>
+                  </fieldset>
+
+                  <fieldset class="space-y-1">
                     <label for="email" class="block text-sm font-medium text-gray-700">Correo electrónico</label>
-                    <input id="email" formControlName="email" type="email" placeholder="tu@email.com" class="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full" />
-                    <p role="alert" class="text-red-500 text-xs" *ngIf="form.get('email')?.invalid && (form.get('email')?.touched || form.get('email')?.dirty)">Ingresa un correo válido.</p>
+                    <input id="email" formControlName="email" type="email" placeholder="ej. u20201597@utp.edu.pe" class="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full" />
+                    <p role="alert" class="text-red-500 text-xs" *ngIf="form.get('email')?.errors?.required && (form.get('email')?.touched || form.get('email')?.dirty)">El correo es obligatorio.</p>
+                    <p role="alert" class="text-red-500 text-xs" *ngIf="form.get('email')?.errors?.email && (form.get('email')?.touched || form.get('email')?.dirty)">Ingresa un correo válido.</p>
+                    <p role="alert" class="text-red-500 text-xs" *ngIf="form.get('email')?.errors?.utpDomain && (form.get('email')?.touched || form.get('email')?.dirty)">El correo debe pertenecer al dominio @utp.edu.pe.</p>
                   </fieldset>
 
                   <fieldset class="space-y-1">
