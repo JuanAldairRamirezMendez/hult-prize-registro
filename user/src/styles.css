@@ -1,1 +1,47 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+    --hult-blue: #2524D1;
+    --hult-purple: #430E5C;
+    --hult-pink: #E5007E;
+    --hult-lightblue: #00A3E0;
+}
+
+.text-hult-blue {
+    color: var(--hult-blue);
+}
+
+.bg-hult-blue {
+    background-color: var(--hult-blue);
+}
+
+.text-hult-purple {
+    color: var(--hult-purple);
+}
+
+.bg-hult-purple {
+    background-color: var(--hult-purple);
+}
+
+.text-hult-pink {
+    color: var(--hult-pink);
+}
+
+.bg-hult-pink {
+    background-color: var(--hult-pink);
+}
+
+.text-hult-lightblue {
+    color: var(--hult-lightblue);
+}
+
+.bg-hult-lightblue {
+    background-color: var(--hult-lightblue);
+}
+
+.hult-gradient {
+    background: linear-gradient(90deg, var(--hult-purple) 0%, var(--hult-pink) 100%);
+}
+
+.bg-hult-pink-light {
+    background-color: rgba(229, 0, 126, 0.2);
+}

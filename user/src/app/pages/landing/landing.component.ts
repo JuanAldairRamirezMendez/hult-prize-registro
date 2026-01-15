@@ -49,7 +49,7 @@ export class LandingComponent implements OnInit {
       leaderName: ['', [Validators.required, Validators.minLength(2)]],
       // Código de estudiante (de un miembro del equipo)
       studentCode: ['', [Validators.required, Validators.pattern(/^u\d{6,}$/i)]],
-      email: ['', [Validators.required, Validators.email, this.utpEmailValidator()]],
+      email: ['', [Validators.required, Validators.email]],
       // phone: optional, but if provided must contain at least 9 digits
       phone: ['', [this.phoneDigitsValidator(9)]],
       members: [2, [Validators.min(2), Validators.max(4)]],
@@ -121,7 +121,48 @@ export class LandingComponent implements OnInit {
     control.updateValueAndValidity();
   }
 
+  // Countdown properties
+  days: number = 0;
+  hours: number = 0;
+  minutes: number = 0;
+  seconds: number = 0;
+  private deadline = new Date('2026-02-03T23:59:59').getTime();
+  private timerInterval: any;
+
   ngOnInit() {
+    this.startTimer();
+  }
+
+  ngOnDestroy() {
+    if (this.timerInterval) {
+      clearInterval(this.timerInterval);
+    }
+  }
+
+  startTimer() {
+    this.updateTime();
+    this.timerInterval = setInterval(() => {
+      this.updateTime();
+    }, 1000);
+  }
+
+  updateTime() {
+    const now = new Date().getTime();
+    const distance = this.deadline - now;
+
+    if (distance < 0) {
+      this.days = 0;
+      this.hours = 0;
+      this.minutes = 0;
+      this.seconds = 0;
+      clearInterval(this.timerInterval);
+      return;
+    }
+
+    this.days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    this.hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    this.minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    this.seconds = Math.floor((distance % (1000 * 60)) / 1000);
   }
 
   // Enviar correo de verificación al email asociado al código de estudiante

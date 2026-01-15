@@ -1,17 +1,9 @@
 <app-navbar></app-navbar>
 <main>
-  <div
-    class="relative pt-16 pb-32 flex content-center items-center justify-center"
-    style="min-height: 75vh;"
-  >
-    <div
-      class="absolute top-0 w-full h-full bg-center bg-cover"
-      style='background-image: url("../../../assets/img/fondo\ 3.png");'
-    >
-      <span
-        id="blackOverlay"
-        class="w-full h-full absolute opacity-75 bg-black"
-      ></span>
+  <div class="relative pt-16 pb-32 flex content-center items-center justify-center" style="min-height: 75vh;">
+    <div class="absolute top-0 w-full h-full bg-center bg-cover"
+      style='background-image: url("../../../assets/img/fondo\ 3.png");'>
+      <span id="blackOverlay" class="w-full h-full absolute opacity-75 bg-black"></span>
     </div>
     <div class="container relative mx-auto">
       <div class="items-center flex flex-wrap">
@@ -21,38 +13,46 @@
               Tu impacto empieza aquí.
             </h1>
             <p class="mt-4 text-lg text-gray-300">
-              La competencia estudiantil de emprendimiento social más grande del mundo 
+              La competencia estudiantil de emprendimiento social más grande del mundo
               llega a la Universidad Tecnológica del Perú.
               Convierte tu idea en un proyecto con impacto real alineado a los ODS.
             </p>
-            <div class="mt-6">
-              <a
-                class="bg-white text-gray-800 active:bg-gray-100 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none"
-                href="#register"
-                >Registra tu proyecto</a
-              >
+            <!-- Countdown Timer -->
+            <div class="mt-8 flex justify-center items-start gap-4 text-center text-white">
+              <div>
+                <span class="block text-4xl font-bold">{{ days }}</span>
+                <span class="text-sm uppercase">Días</span>
+              </div>
+              <div class="text-4xl font-bold -mt-1">:</div>
+              <div>
+                <span class="block text-4xl font-bold">{{ hours }}</span>
+                <span class="text-sm uppercase">Horas</span>
+              </div>
+              <div class="text-4xl font-bold -mt-1">:</div>
+              <div>
+                <span class="block text-4xl font-bold">{{ minutes }}</span>
+                <span class="text-sm uppercase">Min</span>
+              </div>
+              <div class="text-4xl font-bold -mt-1">:</div>
+              <div>
+                <span class="block text-4xl font-bold">{{ seconds }}</span>
+                <span class="text-sm uppercase">Seg</span>
+              </div>
+            </div>
+
+            <div class="mt-8">
+              <a class="bg-white text-gray-800 active:bg-gray-100 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none"
+                href="#register">Registra tu proyecto</a>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div
-      class="top-auto bottom-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden"
-      style="height: 70px;"
-    >
-      <svg
-        class="absolute bottom-0 overflow-hidden"
-        xmlns="http://www.w3.org/2000/svg"
-        preserveAspectRatio="none"
-        version="1.1"
-        viewBox="0 0 2560 100"
-        x="0"
-        y="0"
-      >
-        <polygon
-          class="text-gray-300 fill-current"
-          points="2560 0 2560 100 0 100"
-        ></polygon>
+    <div class="top-auto bottom-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden"
+      style="height: 70px;">
+      <svg class="absolute bottom-0 overflow-hidden" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"
+        version="1.1" viewBox="0 0 2560 100" x="0" y="0">
+        <polygon class="text-gray-300 fill-current" points="2560 0 2560 100 0 100"></polygon>
       </svg>
     </div>
   </div>
@@ -60,32 +60,26 @@
     <div class="container mx-auto px-4">
       <div class="flex flex-wrap">
         <div class="lg:pt-12 pt-6 w-full md:w-4/12 px-4 text-center">
-          <div
-            class="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg"
-          >
+          <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
             <div class="px-4 py-5 flex-auto">
               <div
-                class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-red-400"
-              >
+                class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-hult-pink">
                 <i class="fas fa-award"></i>
               </div>
               <h6 class="text-xl font-semibold">Competencia Global</h6>
               <p class="mt-2 mb-4 text-gray-600">
-                Hult Prize es una competencia internacional que reta a estudiantes universitarios a 
+                Hult Prize es una competencia internacional que reta a estudiantes universitarios a
                 resolver problemas sociales y ambientales mediante emprendimientos innovadores alineados
-                 a los Objetivos de Desarrollo Sostenible (ODS).
+                a los Objetivos de Desarrollo Sostenible (ODS).
               </p>
             </div>
           </div>
         </div>
         <div class="w-full md:w-4/12 px-4 text-center">
-          <div
-            class="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg"
-          >
+          <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
             <div class="px-4 py-5 flex-auto">
               <div
-                class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-blue-400"
-              >
+                class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-hult-blue">
                 <i class="fas fa-retweet"></i>
               </div>
               <h6 class="text-xl font-semibold">Mentoría y Formación</h6>
@@ -97,18 +91,15 @@
           </div>
         </div>
         <div class="pt-6 w-full md:w-4/12 px-4 text-center">
-          <div
-            class="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg"
-          >
+          <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
             <div class="px-4 py-5 flex-auto">
               <div
-                class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-green-400"
-              >
+                class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-hult-lightblue">
                 <i class="fas fa-fingerprint"></i>
               </div>
               <h6 class="text-xl font-semibold">Oportunidades Reales</h6>
               <p class="mt-2 mb-4 text-gray-600">
-                Los ganadores del Campus Round avanzan a las siguientes etapas 
+                Los ganadores del Campus Round avanzan a las siguientes etapas
                 del Hult Prize, con la posibilidad de competir por USD $1,000,000 en financiamiento.
               </p>
             </div>
@@ -118,42 +109,26 @@
       <div class="flex flex-wrap items-center mt-32">
         <div class="w-full md:w-5/12 px-4 mr-auto ml-auto">
           <div
-            class="text-gray-600 p-3 text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-lg rounded-full bg-gray-100"
-          >
+            class="text-gray-600 p-3 text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-lg rounded-full bg-gray-100">
             <i class="fas fa-user-friends text-xl"></i>
           </div>
           <h3 class="text-3xl mb-2 font-semibold leading-normal">
             ¿Por qué participar en Hult Prize?
           </h3>
-          <p
-            class="text-lg font-light leading-relaxed mt-4 mb-4 text-gray-700"
-          >
+          <p class="text-lg font-light leading-relaxed mt-4 mb-4 text-gray-700">
             Participar en Hult Prize no es solo competir: es aprender a emprender con propósito.
-            Trabajarás en equipo, validarás ideas reales y desarrollarás habilidades clave para 
+            Trabajarás en equipo, validarás ideas reales y desarrollarás habilidades clave para
             tu futuro profesional,con el respaldo de una red global de innovación.
           </p>
         </div>
         <div class="w-full md:w-4/12 px-4 mr-auto ml-auto">
           <div
-            class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded-lg bg-pink-600"
-          >
-            <img
-              alt="..."
-              src="../../../assets/img/filters_blur(0).png"
-              class="w-full align-middle rounded-t-lg"
-            />
+            class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded-lg bg-hult-pink">
+            <img alt="..." src="../../../assets/img/filters_blur(0).png" class="w-full align-middle rounded-t-lg" />
             <blockquote class="relative p-8 mb-4">
-              <svg
-                preserveAspectRatio="none"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 583 95"
-                class="absolute left-0 w-full block"
-                style="height: 95px; top: -94px;"
-              >
-                <polygon
-                  points="-30,95 583,95 583,65"
-                  class="text-pink-600 fill-current"
-                ></polygon>
+              <svg preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 583 95"
+                class="absolute left-0 w-full block" style="height: 95px; top: -94px;">
+                <polygon points="-30,95 583,95 583,65" class="text-hult-pink fill-current"></polygon>
               </svg>
               <h4 class="text-xl font-bold text-white">
                 ¿Qué ofrece el Campus Round 2026?
@@ -177,40 +152,77 @@
       </div>
     </div>
   </section>
+
+  <!-- Timeline Section -->
+  <section class="py-20 bg-gray-100">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-wrap text-center justify-center mb-12">
+        <div class="w-full lg:w-6/12 px-4">
+          <h2 class="text-4xl font-semibold text-hult-purple">Cronograma 2026</h2>
+          <p class="text-lg leading-relaxed mt-4 mb-4 text-gray-600">
+            Tu camino hacia el impacto social global comienza aquí.
+          </p>
+        </div>
+      </div>
+
+      <div class="relative py-8">
+        <!-- Line -->
+        <div class="hidden md:block absolute top-1/2 left-0 w-full h-1 bg-gray-300 transform -translate-y-1/2 z-0">
+        </div>
+
+        <div class="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Step 1 -->
+          <div class="bg-white p-6 rounded-lg shadow-lg text-center relative">
+            <div
+              class="w-10 h-10 mx-auto bg-hult-pink text-white rounded-full flex items-center justify-center font-bold text-lg mb-4 border-4 border-white shadow-sm">
+              1</div>
+            <h5 class="text-xl font-bold mb-2">Registro</h5>
+            <p class="text-sm text-gray-500 mb-2">Enero</p>
+            <p class="text-gray-700">Inscribe tu equipo y define tu idea de impacto.</p>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="bg-white p-6 rounded-lg shadow-lg text-center relative">
+            <div
+              class="w-10 h-10 mx-auto bg-hult-blue text-white rounded-full flex items-center justify-center font-bold text-lg mb-4 border-4 border-white shadow-sm">
+              2</div>
+            <h5 class="text-xl font-bold mb-2">Entrenamiento</h5>
+            <p class="text-sm text-gray-500 mb-2">Enero</p>
+            <p class="text-gray-700">Talleres, mentorías y validación de modelo de negocio.</p>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="bg-white p-6 rounded-lg shadow-lg text-center relative">
+            <div
+              class="w-10 h-10 mx-auto bg-hult-lightblue text-white rounded-full flex items-center justify-center font-bold text-lg mb-4 border-4 border-white shadow-sm">
+              3</div>
+            <h5 class="text-xl font-bold mb-2">Campus Round</h5>
+            <p class="text-sm text-gray-500 mb-2">Febrero</p>
+            <p class="text-gray-700">Gran final en UTP. Los ganadores pasan a la etapa regional.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="relative py-20">
-    <div
-      class="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20"
-      style="height: 80px;"
-    >
-      <svg
-        class="absolute bottom-0 overflow-hidden"
-        xmlns="http://www.w3.org/2000/svg"
-        preserveAspectRatio="none"
-        version="1.1"
-        viewBox="0 0 2560 100"
-        x="0"
-        y="0"
-      >
-        <polygon
-          class="text-white fill-current"
-          points="2560 0 2560 100 0 100"
-        ></polygon>
+    <div class="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20"
+      style="height: 80px;">
+      <svg class="absolute bottom-0 overflow-hidden" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"
+        version="1.1" viewBox="0 0 2560 100" x="0" y="0">
+        <polygon class="text-white fill-current" points="2560 0 2560 100 0 100"></polygon>
       </svg>
     </div>
     <div class="container mx-auto px-4">
       <div class="items-center flex flex-wrap">
         <div class="w-full md:w-4/12 ml-auto mr-auto px-4">
-          <img
-            alt="..."
-            class="max-w-full rounded-lg shadow-lg"
-            src="../../../assets/img/fd0e534a948394a55a7940aac0ac55d3.jpg"
-          />
+          <img alt="..." class="max-w-full rounded-lg shadow-lg"
+            src="../../../assets/img/fd0e534a948394a55a7940aac0ac55d3.jpg" />
         </div>
         <div class="w-full md:w-5/12 ml-auto mr-auto px-4">
           <div class="md:pr-12">
             <div
-              class="text-pink-600 p-3 text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-lg rounded-full bg-pink-300"
-            >
+              class="text-hult-pink p-3 text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-lg rounded-full bg-hult-pink-light">
               <i class="fas fa-rocket text-xl"></i>
             </div>
             <h3 class="text-3xl font-semibold">Una comunidad global en crecimiento</h3>
@@ -224,9 +236,8 @@
                 <div class="flex items-center">
                   <div>
                     <span
-                      class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-pink-600 bg-pink-200 mr-3"
-                      ><i class="fas fa-fingerprint"></i
-                    ></span>
+                      class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-hult-pink bg-hult-pink-light mr-3"><i
+                        class="fas fa-fingerprint"></i></span>
                   </div>
                   <div>
                     <h4 class="text-gray-600">
@@ -239,9 +250,8 @@
                 <div class="flex items-center">
                   <div>
                     <span
-                      class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-pink-600 bg-pink-200 mr-3"
-                      ><i class="fab fa-html5"></i
-                    ></span>
+                      class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-hult-pink bg-hult-pink-light mr-3"><i
+                        class="fab fa-html5"></i></span>
                   </div>
                   <div>
                     <h4 class="text-gray-600">Casos Reales de Impacto</h4>
@@ -252,9 +262,8 @@
                 <div class="flex items-center">
                   <div>
                     <span
-                      class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-pink-600 bg-pink-200 mr-3"
-                      ><i class="far fa-paper-plane"></i
-                    ></span>
+                      class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-hult-pink bg-hult-pink-light mr-3"><i
+                        class="far fa-paper-plane"></i></span>
                   </div>
                   <div>
                     <h4 class="text-gray-600">Equipos Multidiciplinarios</h4>
@@ -273,11 +282,11 @@
         <div class="w-full lg:w-6/12 px-4">
           <h2 class="text-4xl font-semibold">Equipo organizador</h2>
           <p class="text-lg leading-relaxed m-4 text-gray-600">
-            El Equipo Organizador de Hult Prize Campus Round 2026 – 
+            El Equipo Organizador de Hult Prize Campus Round 2026 –
             UTP es el encargado de planificar, coordinar y ejecutar
             todas las actividades del evento. Su labor incluye la convocatoria
             de participantes, la gestión de mentorías y jurados, la organización
-            logística y la correcta aplicación de los lineamientos oficiales de 
+            logística y la correcta aplicación de los lineamientos oficiales de
             Hult Prize, garantizando una experiencia formativa, transparente y alineada
             al espíritu de innovación e impacto social.
           </p>
@@ -286,89 +295,263 @@
       <div class="flex flex-wrap">
         <div class="w-full md:w-6/12 lg:w-3/12 lg:mb-0 mb-12 px-4">
           <div class="px-6" (click)="scrollToRegister($event)">
-            <img
-              alt="..."
-              src="../../../assets/img/TEAM.png"
-              class="shadow-lg rounded-full max-w-full mx-auto"
-              style="max-width: 120px;"
-            />
+            <img alt="..." src="../../../assets/img/TEAM.png" class="shadow-lg rounded-full max-w-full mx-auto"
+              style="max-width: 120px;" />
             <div class="pt-6 text-center">
-              <h5 class="text-xl font-bold" >Juan Ramirez</h5>
+              <h5 class="text-xl font-bold">Juan Ramirez</h5>
               <p class="mt-1 text-sm text-gray-500 uppercase font-semibold">
                 Campus Director
               </p>
               <div class="mt-6">
-                <button
-                  class="bg-blue-400 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
-                  type="button"
-                >
-                  <i class="fab fa-twitter"></i></button
-                ><button
-                  class="bg-blue-600 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
-                  type="button"
-                >
-                  <i class="fab fa-facebook-f"></i></button
-                ><button
-                  class="bg-pink-500 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
-                  type="button"
-                >
-                  <i class="fab fa-dribbble"></i>
-                </button>
+                <a href="https://www.linkedin.com/in/juan-aldair-ramirez-mendez-756356389/" target="_blank"
+                  (click)="$event.stopPropagation()"
+                  class="bg-hult-blue text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1 inline-flex items-center justify-center"
+                  type="button">
+                  <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://www.instagram.com/mendezjuanaldairramirez/" target="_blank"
+                  (click)="$event.stopPropagation()"
+                  class="bg-hult-pink text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1 inline-flex items-center justify-center"
+                  type="button">
+                  <i class="fab fa-instagram"></i>
+                </a>
               </div>
             </div>
           </div>
         </div>
         <div class="w-full md:w-6/12 lg:w-3/12 lg:mb-0 mb-12 px-4">
           <div class="px-6" (click)="scrollToRegister($event)">
-            <img
-              alt="..."
-              src="../../../assets/img/IMG_589367.png"
-              class="shadow-lg rounded-full max-w-full mx-auto"
-              style="max-width: 120px;"
-            />
+            <img alt="..." src="../../../assets/img/IMG_589367.png" class="shadow-lg rounded-full max-w-full mx-auto"
+              style="max-width: 120px;" />
             <div class="pt-6 text-center">
               <h5 class="text-xl font-bold">Lady Loayza</h5>
               <p class="mt-1 text-sm text-gray-500 uppercase font-semibold">
                 Deputy Campus Director
               </p>
               <div class="mt-6">
-                <button
-                  class="bg-red-600 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
-                  type="button"
-                >
-                  <i class="fab fa-google"></i></button
-                ><button
-                  class="bg-blue-600 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
-                  type="button"
-                >
-                  <i class="fab fa-facebook-f"></i>
-                </button>
+                <a href="https://www.linkedin.com/in/ladyloayzarodriguez" target="_blank"
+                  (click)="$event.stopPropagation()"
+                  class="bg-hult-blue text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1 inline-flex items-center justify-center"
+                  type="button">
+                  <i class="fab fa-linkedin"></i>
+                </a>
               </div>
             </div>
           </div>
         </div>
-     
+        <div class="w-full md:w-6/12 lg:w-3/12 lg:mb-0 mb-12 px-4">
+          <div class="px-6" (click)="scrollToRegister($event)">
+            <img alt="..." src="../../../assets/img/roy.png" class="shadow-lg rounded-full max-w-full mx-auto"
+              style="max-width: 120px;" />
+            <div class="pt-6 text-center">
+              <h5 class="text-xl font-bold">Roy Meza</h5>
+              <p class="mt-1 text-sm text-gray-500 uppercase font-semibold">
+                Coordinador de Talento
+              </p>
+              <div class="mt-6">
+                <a href="https://www.linkedin.com/in/roymeza/" target="_blank" (click)="$event.stopPropagation()"
+                  class="bg-hult-blue text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1 inline-flex items-center justify-center"
+                  type="button">
+                  <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://www.instagram.com/christhian.16" target="_blank" (click)="$event.stopPropagation()"
+                  class="bg-hult-pink text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1 inline-flex items-center justify-center"
+                  type="button">
+                  <i class="fab fa-instagram"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="w-full md:w-6/12 lg:w-3/12 lg:mb-0 mb-12 px-4">
+          <div class="px-6" (click)="scrollToRegister($event)">
+            <img alt="..." src="../../../assets/img/valeria.png" class="shadow-lg rounded-full max-w-full mx-auto"
+              style="max-width: 120px;" />
+            <div class="pt-6 text-center">
+              <h5 class="text-xl font-bold">Valeria Caceres</h5>
+              <p class="mt-1 text-sm text-gray-500 uppercase font-semibold">
+                Miembro del equipo de marketing
+              </p>
+              <div class="mt-6">
+                <a href="javascript:void(0)" target="_blank" (click)="$event.stopPropagation()"
+                  class="bg-hult-blue text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1 inline-flex items-center justify-center"
+                  type="button">
+                  <i class="fab fa-linkedin"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="w-full md:w-6/12 lg:w-3/12 lg:mb-0 mb-12 px-4">
+          <div class="px-6" (click)="scrollToRegister($event)">
+            <img alt="..." src="../../../assets/img/PEDRO.png" class="shadow-lg rounded-full max-w-full mx-auto"
+              style="max-width: 120px;" />
+            <div class="pt-6 text-center">
+              <h5 class="text-xl font-bold">Pedro Tomay</h5>
+              <p class="mt-1 text-sm text-gray-500 uppercase font-semibold">
+                Miembro del equipo de marketing
+              </p>
+              <div class="mt-6">
+                <a href="javascript:void(0)" target="_blank" (click)="$event.stopPropagation()"
+                  class="bg-hult-blue text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1 inline-flex items-center justify-center"
+                  type="button">
+                  <i class="fab fa-linkedin"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="w-full md:w-6/12 lg:w-3/12 lg:mb-0 mb-12 px-4">
+          <div class="px-6" (click)="scrollToRegister($event)">
+            <img alt="..." src="../../../assets/img/ANTONIO.jpeg" class="shadow-lg rounded-full max-w-full mx-auto"
+              style="max-width: 120px;" />
+            <div class="pt-6 text-center">
+              <h5 class="text-xl font-bold">Antonio Arnao</h5>
+              <p class="mt-1 text-sm text-gray-500 uppercase font-semibold">
+                Miembro del equipo de marketing
+              </p>
+              <div class="mt-6">
+                <a href="https://www.linkedin.com/in/antonio-arnao-748515255?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                  target="_blank" (click)="$event.stopPropagation()"
+                  class="bg-hult-blue text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1 inline-flex items-center justify-center"
+                  type="button">
+                  <i class="fab fa-linkedin"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="w-full md:w-6/12 lg:w-3/12 lg:mb-0 mb-12 px-4">
+          <div class="px-6" (click)="scrollToRegister($event)">
+            <img alt="..." src="../../../assets/img/FRANCHESCO.jpeg" class="shadow-lg rounded-full max-w-full mx-auto"
+              style="max-width: 120px;" />
+            <div class="pt-6 text-center">
+              <h5 class="text-xl font-bold">Franchesco Mori</h5>
+              <p class="mt-1 text-sm text-gray-500 uppercase font-semibold">
+                Miembro del equipo de marketing
+              </p>
+              <div class="mt-6">
+                <a href="javascript:void(0)" target="_blank" (click)="$event.stopPropagation()"
+                  class="bg-hult-blue text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1 inline-flex items-center justify-center"
+                  type="button">
+                  <i class="fab fa-linkedin"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="w-full md:w-6/12 lg:w-3/12 lg:mb-0 mb-12 px-4">
+          <div class="px-6" (click)="scrollToRegister($event)">
+            <img alt="..." src="../../../assets/img/gonzalo.jpg" class="shadow-lg rounded-full max-w-full mx-auto"
+              style="max-width: 120px;" />
+            <div class="pt-6 text-center">
+              <h5 class="text-xl font-bold">Gonzalo Ponce</h5>
+              <p class="mt-1 text-sm text-gray-500 uppercase font-semibold">
+                Miembro del equipo de marketing
+              </p>
+              <div class="mt-6">
+                <a href="https://www.linkedin.com/in/gonzalo-jes%C3%BAs-ponce-c%C3%A1ceres-142718274/" target="_blank"
+                  (click)="$event.stopPropagation()"
+                  class="bg-hult-blue text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1 inline-flex items-center justify-center"
+                  type="button">
+                  <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://www.instagram.com/gonzzzzpc/" target="_blank" (click)="$event.stopPropagation()"
+                  class="bg-hult-pink text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1 inline-flex items-center justify-center"
+                  type="button">
+                  <i class="fab fa-instagram"></i>
+                </a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="w-full md:w-6/12 lg:w-3/12 lg:mb-0 mb-12 px-4">
+          <div class="px-6" (click)="scrollToRegister($event)">
+            <img alt="..." src="../../../assets/img/adriana.jpeg" class="shadow-lg rounded-full max-w-full mx-auto"
+              style="max-width: 120px;" />
+            <div class="pt-6 text-center">
+              <h5 class="text-xl font-bold">Adriana Eslava</h5>
+              <p class="mt-1 text-sm text-gray-500 uppercase font-semibold">
+                Coordinadora de Marketing
+              </p>
+              <div class="mt-6">
+                <a href="https://www.linkedin.com/in/adriana-eslava-asencios/" target="_blank"
+                  (click)="$event.stopPropagation()"
+                  class="bg-hult-blue text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1 inline-flex items-center justify-center"
+                  type="button">
+                  <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://www.instagram.com/adriana_eslavaa/" target="_blank" (click)="$event.stopPropagation()"
+                  class="bg-hult-pink text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1 inline-flex items-center justify-center"
+                  type="button">
+                  <i class="fab fa-instagram"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="w-full md:w-6/12 lg:w-3/12 lg:mb-0 mb-12 px-4">
+          <div class="px-6" (click)="scrollToRegister($event)">
+            <img alt="..." src="../../../assets/img/jasmin.jpeg" class="shadow-lg rounded-full max-w-full mx-auto"
+              style="max-width: 120px;" />
+            <div class="pt-6 text-center">
+              <h5 class="text-xl font-bold">Jasmin Condori</h5>
+              <p class="mt-1 text-sm text-gray-500 uppercase font-semibold">
+                Coordinadora de Marketing
+              </p>
+              <div class="mt-6">
+                <a href="https://www.linkedin.com/in/jasmin-condori-larico-984004205" target="_blank"
+                  (click)="$event.stopPropagation()"
+                  class="bg-hult-blue text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1 inline-flex items-center justify-center"
+                  type="button">
+                  <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://www.instagram.com/jasmincl23?igsh=MWJvY2d2MnRxbGdoNA==" target="_blank"
+                  (click)="$event.stopPropagation()"
+                  class="bg-hult-pink text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1 inline-flex items-center justify-center"
+                  type="button">
+                  <i class="fab fa-instagram"></i>
+                </a>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="w-full md:w-6/12 lg:w-3/12 lg:mb-0 mb-12 px-4">
+          <div class="px-6" (click)="scrollToRegister($event)">
+            <img alt="..." src="../../../assets/img/noemi.jpeg" class="shadow-lg rounded-full max-w-full mx-auto"
+              style="max-width: 120px;" />
+            <div class="pt-6 text-center">
+              <h5 class="text-xl font-bold">Noemi Lapa</h5>
+              <p class="mt-1 text-sm text-gray-500 uppercase font-semibold">
+                Miembro del equipo de Marketing
+              </p>
+              <div class="mt-6">
+                <a href="https://www.linkedin.com/in/noemilf/" target="_blank" (click)="$event.stopPropagation()"
+                  class="bg-hult-blue text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1 inline-flex items-center justify-center"
+                  type="button">
+                  <i class="fab fa-linkedin"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
-  <section class="pb-20 relative block bg-gray-900">
-    <div
-      class="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20"
-      style="height: 80px;"
-    >
-      <svg
-        class="absolute bottom-0 overflow-hidden"
-        xmlns="http://www.w3.org/2000/svg"
-        preserveAspectRatio="none"
-        version="1.1"
-        viewBox="0 0 2560 100"
-        x="0"
-        y="0"
-      >
-        <polygon
-          class="text-gray-900 fill-current"
-          points="2560 0 2560 100 0 100"
-        ></polygon>
+  <section class="pb-20 relative block bg-hult-purple">
+    <div class="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20"
+      style="height: 80px;">
+      <svg class="absolute bottom-0 overflow-hidden" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"
+        version="1.1" viewBox="0 0 2560 100" x="0" y="0">
+        <polygon class="text-hult-purple fill-current" points="2560 0 2560 100 0 100"></polygon>
       </svg>
     </div>
     <div class="container mx-auto px-4 lg:pt-24 lg:pb-64">
@@ -383,8 +566,7 @@
       <div class="flex flex-wrap mt-12 justify-center">
         <div class="w-full lg:w-3/12 px-4 text-center">
           <div
-            class="text-gray-900 p-3 w-12 h-12 shadow-lg rounded-full bg-white inline-flex items-center justify-center"
-          >
+            class="text-hult-purple p-3 w-12 h-12 shadow-lg rounded-full bg-white inline-flex items-center justify-center">
             <i class="fas fa-medal text-xl"></i>
           </div>
           <h6 class="text-xl mt-5 font-semibold text-white">
@@ -396,8 +578,7 @@
         </div>
         <div class="w-full lg:w-3/12 px-4 text-center">
           <div
-            class="text-gray-900 p-3 w-12 h-12 shadow-lg rounded-full bg-white inline-flex items-center justify-center"
-          >
+            class="text-hult-purple p-3 w-12 h-12 shadow-lg rounded-full bg-white inline-flex items-center justify-center">
             <i class="fas fa-poll text-xl"></i>
           </div>
           <h5 class="text-xl mt-5 font-semibold text-white">
@@ -409,8 +590,7 @@
         </div>
         <div class="w-full lg:w-3/12 px-4 text-center">
           <div
-            class="text-gray-900 p-3 w-12 h-12 shadow-lg rounded-full bg-white inline-flex items-center justify-center"
-          >
+            class="text-hult-purple p-3 w-12 h-12 shadow-lg rounded-full bg-white inline-flex items-center justify-center">
             <i class="fas fa-lightbulb text-xl"></i>
           </div>
           <h5 class="text-xl mt-5 font-semibold text-white">Impacto</h5>
@@ -421,117 +601,231 @@
       </div>
     </div>
   </section>
-  <section id="register" class="relative block py-24 lg:pt-0 bg-gray-900">
+  <section id="register" class="relative block py-24 lg:pt-0 bg-hult-purple">
     <div class="container mx-auto px-4">
       <div class="flex flex-wrap justify-center lg:-mt-64 -mt-48">
         <div class="w-full lg:w-6/12 px-4">
-          <div
-            class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-gray-300"
-          >
+          <div class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-gray-300">
             <div class="flex-auto p-5 lg:p-10">
-                <h4 class="text-2xl font-semibold">Registra tu Proyecto</h4>
+              <h4 class="text-2xl font-semibold">Registra tu Proyecto</h4>
 
-                <form [formGroup]="form" (ngSubmit)="onSubmit()" class="space-y-4 mt-6">
-                  <fieldset class="space-y-1">
-                    <label for="teamName" class="block text-sm font-medium text-gray-700">Nombre del equipo</label>
-                    <input id="teamName" formControlName="teamName" type="text" placeholder="Ingresa el nombre de tu equipo" class="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full" />
-                    <p role="alert" class="text-red-500 text-xs" *ngIf="form.get('teamName')?.invalid && (form.get('teamName')?.touched || form.get('teamName')?.dirty)">El nombre del equipo es obligatorio.</p>
-                  </fieldset>
+              <form [formGroup]="form" (ngSubmit)="onSubmit()" class="space-y-4 mt-6">
+                <fieldset class="space-y-1">
+                  <label for="teamName" class="block text-sm font-medium text-gray-700">Nombre del equipo</label>
+                  <input id="teamName" formControlName="teamName" type="text"
+                    placeholder="Ingresa el nombre de tu equipo"
+                    class="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full" />
+                  <p role="alert" class="text-red-500 text-xs"
+                    *ngIf="form.get('teamName')?.invalid && (form.get('teamName')?.touched || form.get('teamName')?.dirty)">
+                    El nombre del equipo es obligatorio.</p>
+                </fieldset>
 
-                  <fieldset class="space-y-1">
-                    <label for="leaderName" class="block text-sm font-medium text-gray-700">Nombre del líder</label>
-                    <input id="leaderName" formControlName="leaderName" type="text" placeholder="Ingresa el nombre del líder" class="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full" />
-                    <p role="alert" class="text-red-500 text-xs" *ngIf="form.get('leaderName')?.invalid && (form.get('leaderName')?.touched || form.get('leaderName')?.dirty)">El nombre del líder es obligatorio.</p>
-                  </fieldset>
+                <fieldset class="space-y-1">
+                  <label for="leaderName" class="block text-sm font-medium text-gray-700">Nombre del líder</label>
+                  <input id="leaderName" formControlName="leaderName" type="text"
+                    placeholder="Ingresa el nombre del líder"
+                    class="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full" />
+                  <p role="alert" class="text-red-500 text-xs"
+                    *ngIf="form.get('leaderName')?.invalid && (form.get('leaderName')?.touched || form.get('leaderName')?.dirty)">
+                    El nombre del líder es obligatorio.</p>
+                </fieldset>
 
-                  <fieldset class="space-y-1">
-                    <label for="studentCode" class="block text-sm font-medium text-gray-700">Código de estudiante (de un miembro del equipo)</label>
-                    <input id="studentCode" formControlName="studentCode" type="text" placeholder="u20201597" class="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full" (blur)="verifyStudentCode()" />
-                    <p role="alert" class="text-red-500 text-xs" *ngIf="form.get('studentCode')?.errors?.required && (form.get('studentCode')?.touched || form.get('studentCode')?.dirty)">El código de estudiante es obligatorio.</p>
-                    <p role="alert" class="text-red-500 text-xs" *ngIf="form.get('studentCode')?.errors?.pattern && (form.get('studentCode')?.touched || form.get('studentCode')?.dirty)">Formato de código inválido (ej. u20201597).</p>
-                    <p *ngIf="studentVerificationLoading" class="text-sm text-gray-500">Enviando correo de comprobación a {{ (form.get('studentCode')?.value || '') + '@utp.edu.pe' }}...</p>
-                    <p *ngIf="studentVerificationSent" class="text-sm text-green-600">Correo de comprobación enviado a {{ (form.get('studentCode')?.value || '') + '@utp.edu.pe' }}. Revisa tu bandeja.</p>
-                    <p *ngIf="studentVerificationError" class="text-sm text-red-500">{{ studentVerificationError }}</p>
-                  </fieldset>
+                <fieldset class="space-y-1">
+                  <label for="studentCode" class="block text-sm font-medium text-gray-700">Código de estudiante (de un
+                    miembro del equipo)</label>
+                  <input id="studentCode" formControlName="studentCode" type="text" placeholder="u20201597"
+                    class="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full" />
+                  <p role="alert" class="text-red-500 text-xs"
+                    *ngIf="form.get('studentCode')?.errors?.required && (form.get('studentCode')?.touched || form.get('studentCode')?.dirty)">
+                    El código de estudiante es obligatorio.</p>
+                  <p role="alert" class="text-red-500 text-xs"
+                    *ngIf="form.get('studentCode')?.errors?.pattern && (form.get('studentCode')?.touched || form.get('studentCode')?.dirty)">
+                    Formato de código inválido (ej. u20201597).</p>
+                </fieldset>
 
-                  <fieldset class="space-y-1">
-                    <label for="email" class="block text-sm font-medium text-gray-700">Correo electrónico</label>
-                    <input id="email" formControlName="email" type="email" placeholder="ej. u20201597@utp.edu.pe" class="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full" />
-                    <p role="alert" class="text-red-500 text-xs" *ngIf="form.get('email')?.errors?.required && (form.get('email')?.touched || form.get('email')?.dirty)">El correo es obligatorio.</p>
-                    <p role="alert" class="text-red-500 text-xs" *ngIf="form.get('email')?.errors?.email && (form.get('email')?.touched || form.get('email')?.dirty)">Ingresa un correo válido.</p>
-                    <p role="alert" class="text-red-500 text-xs" *ngIf="form.get('email')?.errors?.utpDomain && (form.get('email')?.touched || form.get('email')?.dirty)">El correo debe pertenecer al dominio @utp.edu.pe.</p>
-                  </fieldset>
+                <fieldset class="space-y-1">
+                  <label for="email" class="block text-sm font-medium text-gray-700">Correo electrónico</label>
+                  <input id="email" formControlName="email" type="email" placeholder="ej. u20201597@utp.edu.pe"
+                    class="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full" />
+                  <p role="alert" class="text-red-500 text-xs"
+                    *ngIf="form.get('email')?.errors?.required && (form.get('email')?.touched || form.get('email')?.dirty)">
+                    El correo es obligatorio.</p>
+                  <p role="alert" class="text-red-500 text-xs"
+                    *ngIf="form.get('email')?.errors?.email && (form.get('email')?.touched || form.get('email')?.dirty)">
+                    Ingresa un correo válido.</p>
+                  <p role="alert" class="text-red-500 text-xs"
+                    *ngIf="form.get('email')?.errors?.utpDomain && (form.get('email')?.touched || form.get('email')?.dirty)">
+                    El correo debe pertenecer al dominio @utp.edu.pe.</p>
+                </fieldset>
 
-                  <fieldset class="space-y-1">
-                    <label for="phone" class="block text-sm font-medium text-gray-700">Teléfono</label>
-                    <input id="phone" formControlName="phone" type="tel" placeholder="999999999" class="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full" />
-                    <p role="alert" class="text-red-500 text-xs" *ngIf="form.get('phone')?.invalid && (form.get('phone')?.touched || form.get('phone')?.dirty)">Teléfono inválido — se requieren exactamente 9 dígitos numéricos.</p>
-                  </fieldset>
+                <fieldset class="space-y-1">
+                  <label for="phone" class="block text-sm font-medium text-gray-700">Teléfono</label>
+                  <input id="phone" formControlName="phone" type="tel" placeholder="999999999"
+                    class="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full" />
+                  <p role="alert" class="text-red-500 text-xs"
+                    *ngIf="form.get('phone')?.invalid && (form.get('phone')?.touched || form.get('phone')?.dirty)">
+                    Teléfono inválido — se requieren exactamente 9 dígitos numéricos.</p>
+                </fieldset>
 
-                  <fieldset class="space-y-1">
-                    <label for="members" class="block text-sm font-medium text-gray-700">Número de miembros</label>
-                    <input id="members" formControlName="members" type="number" min="2" max="4" class="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full" />
-                    <p role="alert" class="text-red-500 text-xs" *ngIf="form.get('members')?.invalid && (form.get('members')?.touched || form.get('members')?.dirty)">El equipo debe tener entre 2 y 4 miembros.</p>
-                  </fieldset>
+                <fieldset class="space-y-1">
+                  <label for="members" class="block text-sm font-medium text-gray-700">Número de miembros</label>
+                  <input id="members" formControlName="members" type="number" min="2" max="4"
+                    class="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full" />
+                  <p role="alert" class="text-red-500 text-xs"
+                    *ngIf="form.get('members')?.invalid && (form.get('members')?.touched || form.get('members')?.dirty)">
+                    El equipo debe tener entre 2 y 4 miembros.</p>
+                </fieldset>
 
-                  <fieldset class="space-y-1">
-                    <label for="projectName" class="block text-sm font-medium text-gray-700">Nombre del proyecto</label>
-                    <input id="projectName" formControlName="projectName" type="text" placeholder="Nombre del proyecto" class="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full" />
-                  </fieldset>
+                <fieldset class="space-y-1">
+                  <label for="projectName" class="block text-sm font-medium text-gray-700">Nombre del proyecto</label>
+                  <input id="projectName" formControlName="projectName" type="text" placeholder="Nombre del proyecto"
+                    class="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full" />
+                </fieldset>
 
-                  <fieldset class="space-y-1">
-                    <label class="block text-sm font-medium text-gray-700">Categoría de impacto (selecciona 1–3 ODS)</label>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-2 mt-2">
-                      <label *ngFor="let c of categories" class="inline-flex items-center space-x-2">
-                        <input type="checkbox" [checked]="isCategorySelected(c)" (change)="toggleCategory(c)" [disabled]="!isCategorySelected(c) && (form.get('category')?.value?.length >= 3)" class="form-checkbox h-4 w-4 text-gray-800" />
-                        <span class="text-sm text-gray-700">{{ c }}</span>
-                      </label>
-                    </div>
-                    <p role="alert" class="text-red-500 text-xs" *ngIf="form.get('category')?.errors?.categoryCount && (form.get('category')?.touched || form.get('category')?.dirty)">Selecciona entre 1 y 3 categorías.</p>
-                  </fieldset>
+                <fieldset class="space-y-1">
+                  <label class="block text-sm font-medium text-gray-700">Categoría de impacto (selecciona 1–3
+                    ODS)</label>
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-2 mt-2">
+                    <label *ngFor="let c of categories" class="inline-flex items-center space-x-2">
+                      <input type="checkbox" [checked]="isCategorySelected(c)" (change)="toggleCategory(c)"
+                        [disabled]="!isCategorySelected(c) && (form.get('category')?.value?.length >= 3)"
+                        class="form-checkbox h-4 w-4 text-gray-800" />
+                      <span class="text-sm text-gray-700">{{ c }}</span>
+                    </label>
+                  </div>
+                  <p role="alert" class="text-red-500 text-xs"
+                    *ngIf="form.get('category')?.errors?.categoryCount && (form.get('category')?.touched || form.get('category')?.dirty)">
+                    Selecciona entre 1 y 3 categorías.</p>
+                </fieldset>
 
-                  <fieldset class="space-y-1">
-                    <label for="description" class="block text-sm font-medium text-gray-700">Descripción del Proyecto *</label>
-                    <textarea id="description" formControlName="description" rows="6" placeholder="Describe tu proyecto..." class="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full resize-none"></textarea>
-                    <small class="text-gray-500 text-xs block">{{ (form.get('description')?.value?.length || 0) }} / 1000</small>
-                    <p role="alert" class="text-red-500 text-xs" *ngIf="form.get('description')?.invalid && (form.get('description')?.touched || form.get('description')?.dirty)">La descripción es obligatoria (mínimo 20 caracteres).</p>
-                  </fieldset>
+                <fieldset class="space-y-1">
+                  <label for="description" class="block text-sm font-medium text-gray-700">Descripción del Proyecto
+                    *</label>
+                  <textarea id="description" formControlName="description" rows="6"
+                    placeholder="Describe tu proyecto..."
+                    class="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full resize-none"></textarea>
+                  <small class="text-gray-500 text-xs block">{{ (form.get('description')?.value?.length || 0) }} /
+                    1000</small>
+                  <p role="alert" class="text-red-500 text-xs"
+                    *ngIf="form.get('description')?.invalid && (form.get('description')?.touched || form.get('description')?.dirty)">
+                    La descripción es obligatoria (mínimo 20 caracteres).</p>
+                </fieldset>
 
-                  <button type="submit" [disabled]="form.invalid || loading" class="bg-gray-900 text-white active:bg-gray-700 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1">
-                    <svg *ngIf="loading" class="animate-spin h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                      <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-                      <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path>
+                <button type="submit" [disabled]="form.invalid || loading"
+                  class="bg-hult-purple text-white active:bg-gray-700 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1">
+                  <svg *ngIf="loading" class="animate-spin h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg"
+                    fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path>
+                  </svg>
+                  <span *ngIf="!loading">Enviar Registro</span>
+                  <span *ngIf="loading">Enviando...</span>
+                </button>
+
+                <aside *ngIf="errorMessage" role="alert" aria-live="polite"
+                  class="mt-4 rounded-md bg-red-50 border border-red-200 p-4 text-red-800">
+                  <div class="flex items-center">
+                    <svg class="h-5 w-5 text-red-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                     </svg>
-                    <span *ngIf="!loading">Enviar Registro</span>
-                    <span *ngIf="loading">Enviando...</span>
-                  </button>
+                    <strong class="block font-semibold">Error en el registro</strong>
+                  </div>
+                  <p class="text-sm mt-1">{{ errorMessage }}</p>
+                </aside>
 
-                  <aside *ngIf="errorMessage" role="alert" aria-live="polite" class="mt-4 rounded-md bg-red-50 border border-red-200 p-4 text-red-800">
-                    <div class="flex items-center">
-                      <svg class="h-5 w-5 text-red-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                      </svg>
-                      <strong class="block font-semibold">Error en el registro</strong>
-                    </div>
-                    <p class="text-sm mt-1">{{ errorMessage }}</p>
-                  </aside>
-
-                  <aside *ngIf="success" role="status" aria-live="polite" class="mt-4 rounded-md bg-green-50 border border-green-100 p-4 text-green-800">
-                    <div class="flex items-center">
-                      <svg class="h-5 w-5 text-green-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                      </svg>
-                      <strong class="block font-semibold">Registro enviado</strong>
-                    </div>
-                    <p class="text-sm mt-1">Gracias — hemos recibido tu inscripción. Redirigiendo...</p>
-                  </aside>
-                </form>
-              </div>
+                <aside *ngIf="success" role="status" aria-live="polite"
+                  class="mt-4 rounded-md bg-green-50 border border-green-100 p-4 text-green-800">
+                  <div class="flex items-center">
+                    <svg class="h-5 w-5 text-green-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    <strong class="block font-semibold">¡Bienvenido a Hult Prize UTP!</strong>
+                  </div>
+                  <p class="text-sm mt-1">Registro exitoso — Hemos validado tu código UTP y recibido tu inscripción.
+                    Redirigiendo al grupo...</p>
+                </aside>
+              </form>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- FAQ Section -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-4 max-w-4xl">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-semibold text-hult-purple">Preguntas Frecuentes</h2>
+      </div>
+
+      <div class="space-y-4">
+        <details class="group bg-gray-50 rounded-lg p-6 cursor-pointer">
+          <summary class="flex justify-between items-center font-medium cursor-pointer list-none">
+            <span class="text-lg text-hult-purple font-bold">¿Puedo participar solo?</span>
+            <span class="transition group-open:rotate-180">
+              <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor"
+                stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24">
+                <path d="M6 9l6 6 6-6"></path>
+              </svg>
+            </span>
+          </summary>
+          <p class="text-gray-600 mt-3 group-open:animate-fadeIn">
+            No, para participar en Hult Prize debes formar un equipo de entre 2 y 4 estudiantes.
+          </p>
+        </details>
+
+        <details class="group bg-gray-50 rounded-lg p-6 cursor-pointer">
+          <summary class="flex justify-between items-center font-medium cursor-pointer list-none">
+            <span class="text-lg text-hult-purple font-bold">¿Necesito tener un proyecto ya desarrollado?</span>
+            <span class="transition group-open:rotate-180">
+              <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor"
+                stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24">
+                <path d="M6 9l6 6 6-6"></path>
+              </svg>
+            </span>
+          </summary>
+          <p class="text-gray-600 mt-3 group-open:animate-fadeIn">
+            No es necesario. Puedes inscribirte con una idea inicial o una problemática que quieras resolver. Durante el
+            programa te ayudaremos a desarrollarla.
+          </p>
+        </details>
+
+        <details class="group bg-gray-50 rounded-lg p-6 cursor-pointer">
+          <summary class="flex justify-between items-center font-medium cursor-pointer list-none">
+            <span class="text-lg text-hult-purple font-bold">¿Es solo para estudiantes de la UTP?</span>
+            <span class="transition group-open:rotate-180">
+              <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor"
+                stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24">
+                <path d="M6 9l6 6 6-6"></path>
+              </svg>
+            </span>
+          </summary>
+          <p class="text-gray-600 mt-3 group-open:animate-fadeIn">
+            Sí, el Hult Prize UTP está dirigido a nuestra comunidad universitaria. Al menos un miembro (y el líder)
+            deben ser alumnos matriculados.
+          </p>
+        </details>
+
+        <details class="group bg-gray-50 rounded-lg p-6 cursor-pointer">
+          <summary class="flex justify-between items-center font-medium cursor-pointer list-none">
+            <span class="text-lg text-hult-purple font-bold">¿Tiene algún costo de inscripción?</span>
+            <span class="transition group-open:rotate-180">
+              <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor"
+                stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24">
+                <path d="M6 9l6 6 6-6"></path>
+              </svg>
+            </span>
+          </summary>
+          <p class="text-gray-600 mt-3 group-open:animate-fadeIn">
+            ¡Ninguno! La participación es 100% gratuita.
+          </p>
+        </details>
+      </div>
+    </div>
+  </section>
+
   <section id="sponsor" class="py-12 bg-white">
     <div class="container mx-auto px-4">
       <div class="max-w-3xl mx-auto">
@@ -541,42 +835,55 @@
         <form [formGroup]="sponsorForm" (ngSubmit)="submitSponsor()" class="space-y-4 mt-6">
           <fieldset class="space-y-1">
             <label for="sponsorName" class="block text-sm font-medium text-gray-700">Empresa/Nombre</label>
-            <input id="sponsorName" formControlName="name" type="text" placeholder="Nombre del sponsor" class="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full" />
-            <p role="alert" class="text-red-500 text-xs" *ngIf="sponsorForm.get('name')?.invalid && (sponsorForm.get('name')?.touched || sponsorForm.get('name')?.dirty)">El nombre es obligatorio.</p>
+            <input id="sponsorName" formControlName="name" type="text" placeholder="Nombre del sponsor"
+              class="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full" />
+            <p role="alert" class="text-red-500 text-xs"
+              *ngIf="sponsorForm.get('name')?.invalid && (sponsorForm.get('name')?.touched || sponsorForm.get('name')?.dirty)">
+              El nombre es obligatorio.</p>
           </fieldset>
 
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
             <fieldset class="space-y-1">
               <label for="contactName" class="block text-sm font-medium text-gray-700">Contacto</label>
-              <input id="contactName" formControlName="contactName" type="text" placeholder="Nombre de la persona de contacto" class="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full" />
+              <input id="contactName" formControlName="contactName" type="text"
+                placeholder="Nombre de la persona de contacto"
+                class="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full" />
             </fieldset>
 
             <fieldset class="space-y-1">
               <label for="sponsorEmail" class="block text-sm font-medium text-gray-700">Email</label>
-              <input id="sponsorEmail" formControlName="email" type="email" placeholder="contacto@empresa.com" class="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full" />
-              <p role="alert" class="text-red-500 text-xs" *ngIf="sponsorForm.get('email')?.invalid && (sponsorForm.get('email')?.touched || sponsorForm.get('email')?.dirty)">Ingresa un correo válido.</p>
+              <input id="sponsorEmail" formControlName="email" type="email" placeholder="contacto@empresa.com"
+                class="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full" />
+              <p role="alert" class="text-red-500 text-xs"
+                *ngIf="sponsorForm.get('email')?.invalid && (sponsorForm.get('email')?.touched || sponsorForm.get('email')?.dirty)">
+                Ingresa un correo válido.</p>
             </fieldset>
           </div>
 
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
             <fieldset class="space-y-1">
               <label for="sponsorPhone" class="block text-sm font-medium text-gray-700">Teléfono</label>
-              <input id="sponsorPhone" formControlName="phone" type="tel" placeholder="Opcional" class="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full" />
+              <input id="sponsorPhone" formControlName="phone" type="tel" placeholder="Opcional"
+                class="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full" />
             </fieldset>
 
             <fieldset class="space-y-1">
               <label for="website" class="block text-sm font-medium text-gray-700">Sitio web</label>
-              <input id="website" formControlName="website" type="url" placeholder="https://empresa.com" class="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full" />
+              <input id="website" formControlName="website" type="url" placeholder="https://empresa.com"
+                class="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full" />
             </fieldset>
           </div>
 
           <fieldset class="space-y-1">
             <label for="message" class="block text-sm font-medium text-gray-700">Mensaje / Comentarios</label>
-            <textarea id="message" formControlName="message" rows="4" placeholder="Cuéntanos cómo te gustaría colaborar" class="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full resize-none"></textarea>
+            <textarea id="message" formControlName="message" rows="4" placeholder="Cuéntanos cómo te gustaría colaborar"
+              class="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full resize-none"></textarea>
           </fieldset>
 
-          <button type="submit" [disabled]="sponsorLoading || sponsorForm.invalid" class="bg-gray-900 text-white active:bg-gray-700 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1">
-            <svg *ngIf="sponsorLoading" class="animate-spin h-4 w-4 text-white inline-block mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+          <button type="submit" [disabled]="sponsorLoading || sponsorForm.invalid"
+            class="bg-hult-purple text-white active:bg-gray-700 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1">
+            <svg *ngIf="sponsorLoading" class="animate-spin h-4 w-4 text-white inline-block mr-2"
+              xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
               <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
               <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path>
             </svg>
@@ -584,17 +891,20 @@
             <span *ngIf="sponsorLoading">Enviando...</span>
           </button>
 
-          <aside *ngIf="sponsorError" role="alert" aria-live="polite" class="mt-4 rounded-md bg-red-50 border border-red-200 p-4 text-red-800">
+          <aside *ngIf="sponsorError" role="alert" aria-live="polite"
+            class="mt-4 rounded-md bg-red-50 border border-red-200 p-4 text-red-800">
             <div class="flex items-center">
               <svg class="h-5 w-5 text-red-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
               </svg>
               <strong class="block font-semibold">Error al enviar</strong>
             </div>
             <p class="text-sm mt-1">{{ sponsorError }}</p>
           </aside>
 
-          <aside *ngIf="sponsorSuccess" role="status" aria-live="polite" class="mt-4 rounded-md bg-green-50 border border-green-100 p-4 text-green-800">
+          <aside *ngIf="sponsorSuccess" role="status" aria-live="polite"
+            class="mt-4 rounded-md bg-green-50 border border-green-100 p-4 text-green-800">
             <div class="flex items-center">
               <svg class="h-5 w-5 text-green-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
@@ -607,5 +917,9 @@
       </div>
     </div>
   </section>
+  <a href="https://chat.whatsapp.com/LqKQ0aNYq1L6icXhfX5i25" target="_blank"
+    class="fixed bottom-4 right-4 bg-green-500 text-white rounded-full p-4 shadow-lg hover:bg-green-600 transition duration-300 z-50 flex items-center justify-center w-16 h-16">
+    <i class="fab fa-whatsapp text-3xl"></i>
+  </a>
 </main>
 <app-footer></app-footer>
