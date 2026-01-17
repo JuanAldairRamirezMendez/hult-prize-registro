@@ -167,40 +167,73 @@
         </div>
       </div>
 
-      <div class="relative py-8">
-        <!-- Line -->
-        <div class="hidden md:block absolute top-1/2 left-0 w-full h-1 bg-gray-300 transform -translate-y-1/2 z-0">
-        </div>
-
-        <div class="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="relative py-12 px-1">
+        <div class="relative z-10 timeline-horizontal-grid max-w-6xl mx-auto items-stretch">
           <!-- Step 1 -->
-          <div class="glass-card hover-lift p-6 rounded-lg shadow-lg text-center relative reveal reveal-delay-1">
-            <div
-              class="w-10 h-10 mx-auto bg-hult-pink text-white rounded-full flex items-center justify-center font-bold text-lg mb-4 border-4 border-white shadow-sm">
-              1</div>
-            <h5 class="text-xl font-bold mb-2">Registro</h5>
-            <p class="text-sm text-gray-500 mb-2">Enero</p>
-            <p class="text-gray-700">Inscribe tu equipo y define tu idea de impacto.</p>
+          <div class="reveal reveal-delay-1 relative">
+            <!-- Arrow to Step 2 -->
+            <svg class="timeline-arrow-svg hidden md:block" viewBox="0 0 60 40" fill="none">
+              <path d="M5 10C20 5 40 5 55 25" stroke="#E5007E" stroke-width="3" stroke-linecap="round"
+                class="dashed-path" />
+              <path d="M50 20L55 25L45 26" stroke="#E5007E" stroke-width="3" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+            <div class="timeline-vertical-card glass-card hover-lift border-b-8 border-hult-pink">
+              <div class="floating-number text-hult-pink">1</div>
+              <div class="year-bg text-hult-pink">2026</div>
+              <div class="timeline-content">
+                <h5 class="text-2xl font-black mb-4 text-hult-purple">Registro</h5>
+                <p class="text-sm font-bold text-hult-pink mb-4 uppercase tracking-widest">Enero 2026</p>
+                <p class="text-gray-600 text-lg leading-relaxed mb-6">Inscribe tu equipo y define tu idea de impacto
+                  social global.</p>
+                <div class="mt-auto opacity-40 text-4xl">
+                  <i class="fas fa-edit text-hult-pink"></i>
+                </div>
+              </div>
+            </div>
           </div>
 
           <!-- Step 2 -->
-          <div class="glass-card hover-lift p-6 rounded-lg shadow-lg text-center relative reveal reveal-delay-2">
-            <div
-              class="w-10 h-10 mx-auto bg-hult-blue text-white rounded-full flex items-center justify-center font-bold text-lg mb-4 border-4 border-white shadow-sm">
-              2</div>
-            <h5 class="text-xl font-bold mb-2">Entrenamiento</h5>
-            <p class="text-sm text-gray-500 mb-2">Enero</p>
-            <p class="text-gray-700">Talleres, mentorías y validación de modelo de negocio.</p>
+          <div class="reveal reveal-delay-2 relative">
+            <!-- Arrow to Step 3 -->
+            <svg class="timeline-arrow-svg hidden md:block" viewBox="0 0 60 40" fill="none">
+              <path d="M5 10C20 5 40 5 55 25" stroke="#2524D1" stroke-width="3" stroke-linecap="round"
+                class="dashed-path" />
+              <path d="M50 20L55 25L45 26" stroke="#2524D1" stroke-width="3" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+            <div class="timeline-vertical-card glass-card hover-lift border-b-8 border-hult-blue">
+              <div class="floating-number text-hult-blue">2</div>
+              <div class="year-bg text-hult-blue">2026</div>
+              <div class="timeline-content">
+                <h5 class="text-2xl font-black mb-4 text-hult-purple">Entrenamiento</h5>
+                <p class="text-sm font-bold text-hult-blue mb-4 uppercase tracking-widest">Enero 2026</p>
+                <p class="text-gray-600 text-lg leading-relaxed mb-6">Talleres intensivos, mentorías expertas y
+                  validación
+                  de impacto.</p>
+                <div class="mt-auto opacity-40 text-4xl">
+                  <i class="fas fa-brain text-hult-blue"></i>
+                </div>
+              </div>
+            </div>
           </div>
 
           <!-- Step 3 -->
-          <div class="glass-card hover-lift p-6 rounded-lg shadow-lg text-center relative reveal reveal-delay-3">
-            <div
-              class="w-10 h-10 mx-auto bg-hult-lightblue text-white rounded-full flex items-center justify-center font-bold text-lg mb-4 border-4 border-white shadow-sm">
-              3</div>
-            <h5 class="text-xl font-bold mb-2">Campus Round</h5>
-            <p class="text-sm text-gray-500 mb-2">Febrero</p>
-            <p class="text-gray-700">Gran final en UTP. Los ganadores pasan a la etapa regional.</p>
+          <div class="reveal reveal-delay-3 relative">
+            <div class="timeline-vertical-card glass-card hover-lift border-b-8 border-hult-lightblue">
+              <div class="floating-number text-hult-lightblue">3</div>
+              <div class="year-bg text-hult-lightblue">2026</div>
+              <div class="timeline-content">
+                <h5 class="text-2xl font-black mb-4 text-hult-purple">Campus Round</h5>
+                <p class="text-sm font-bold text-hult-lightblue mb-4 uppercase tracking-widest">Febrero 2026</p>
+                <p class="text-gray-600 text-lg leading-relaxed mb-6">Gran final local en UTP. Los ganadores avanzan a
+                  las
+                  regionales.</p>
+                <div class="mt-auto opacity-40 text-4xl">
+                  <i class="fas fa-trophy text-hult-lightblue"></i>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
