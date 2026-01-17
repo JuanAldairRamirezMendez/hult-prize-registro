@@ -45,3 +45,233 @@
 .bg-hult-pink-light {
     background-color: rgba(229, 0, 126, 0.2);
 }
+
+/* --- Modern Design Enhancements --- */
+
+/* 1. Gradient Animation Keyframes */
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* 2. Mesh Gradient Background */
+.animate-mesh-gradient {
+    background: linear-gradient(-45deg, #430E5C, #E5007E, #2524D1, #00A3E0);
+    background-size: 400% 400%;
+    animation: gradient-animation 15s ease infinite;
+    background-attachment: fixed;
+}
+
+/* 3. Glassmorphism Card Effect */
+.glass-card {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* 4. Gradient Typography */
+.text-gradient-primary {
+    background: linear-gradient(90deg, #E5007E, #2524D1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    /* Fallback for non-supported browsers if needed */
+    color: #E5007E;
+}
+
+/* 5. Micro-interactions: Hover Lift */
+.hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* --- Form Innovations --- */
+
+/* Glass Inputs */
+.glass-input {
+    background: rgba(255, 255, 255, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(5px);
+    border-radius: 0.5rem;
+    padding: 1rem 0.75rem;
+    transition: all 0.3s ease;
+    width: 100%;
+    color: #1a202c;
+    /* gray-900 */
+}
+
+.glass-input:focus {
+    background: rgba(255, 255, 255, 0.9);
+    outline: none;
+    box-shadow: 0 0 0 2px transparent;
+    /* Placeholder for gradient border */
+    border-image: linear-gradient(90deg, #E5007E, #2524D1);
+    border-image-slice: 1;
+    /* Since border-radius + border-image is tricky, we'll use a simpler focus ring for now or a pseudo-element if needed. 
+       Let's stick to a clean colored border for compatibility. */
+    border: 1px solid #E5007E;
+    box-shadow: 0 0 0 1px #E5007E;
+}
+
+/* Floating Labels */
+.floating-input-group {
+    position: relative;
+    /* margin-bottom handled by grid/space utilities */
+}
+
+.floating-label {
+    position: absolute;
+    left: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #4a5568;
+    /* gray-600 */
+    pointer-events: none;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    background: transparent;
+    padding: 0 0.25rem;
+    font-size: 0.875rem;
+}
+
+/* Move label up on focus or when input has content (approximated by :not(:placeholder-shown)) */
+.glass-input:focus~.floating-label,
+.glass-input:not(:placeholder-shown)~.floating-label {
+    top: 0;
+    transform: translateY(-50%) scale(0.85);
+    background: rgba(255, 255, 255, 0.8);
+    /* readable on glass */
+    color: #E5007E;
+    font-weight: 600;
+    border-radius: 4px;
+    left: 0.5rem;
+}
+
+/* Category Chips */
+.category-chip {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    /* Pill shape */
+    border: 1px solid #dcdcdc;
+    background: rgba(255, 255, 255, 0.6);
+    color: #4a5568;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    user-select: none;
+}
+
+.category-chip:hover {
+    background: rgba(255, 255, 255, 0.9);
+    transform: translateY(-1px);
+}
+
+.category-chip.selected {
+    background: linear-gradient(90deg, #E5007E, #2524D1);
+    color: white;
+    border-color: transparent;
+    box-shadow: 0 4px 6px rgba(229, 0, 126, 0.3);
+}
+
+.category-chip.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Unified Gradient Button */
+.btn-gradient {
+    background: linear-gradient(90deg, #E5007E, #2524D1);
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.25rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-gradient:hover {
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+}
+
+.btn-gradient:active {
+    transform: translateY(0);
+}
+
+/* Scroll Reveal Animations */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: opacity, transform;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Staggered transition delays for lists/grids */
+.reveal-delay-1 {
+    transition-delay: 0.1s;
+}
+
+.reveal-delay-2 {
+    transition-delay: 0.2s;
+}
+
+.reveal-delay-3 {
+    transition-delay: 0.3s;
+}
+
+.reveal-delay-4 {
+    transition-delay: 0.4s;
+}
+
+/* Fixed Glass Navbar */
+.glass-navbar {
+    background: rgba(255, 255, 255, 0.7) !important;
+    backdrop-filter: blur(15px) !important;
+    -webkit-backdrop-filter: blur(15px) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.glass-navbar .text-white {
+    color: #4A4A4A !important;
+    /* Hult Purple/Gray for contrast on white glass */
+}
+
+.glass-navbar .lg\:text-gray-300 {
+    color: #6B7280 !important;
+}
+
+.glass-navbar i {
+    color: #E5007E !important;
+    /* Hult Pink for icons on glass for visibility */
+}

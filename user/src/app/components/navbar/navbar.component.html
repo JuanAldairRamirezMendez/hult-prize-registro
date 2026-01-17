@@ -1,88 +1,51 @@
-<nav
-  class="top-0 absolute z-50 w-full flex flex-wrap items-center justify-between px-2 py-3 "
->
-  <div
-    class="container px-4 mx-auto flex flex-wrap items-center justify-between"
-  >
-    <div
-      class="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start"
-    >
-      <a
-        class="text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase text-white cursor-pointer"
-        [routerLink]="['/landing']"
-        >HULT PRIZE UTP</a
-      ><button
+<nav class="fixed top-0 z-50 w-full flex flex-wrap items-center justify-between px-2 py-3 transition-all duration-300"
+  [ngClass]="isScrolled ? 'glass-navbar py-2 shadow-lg' : 'bg-transparent py-3'">
+  <div class="container px-4 mx-auto flex flex-wrap items-center justify-between">
+    <div class="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
+      <a class="text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase text-white cursor-pointer"
+        [routerLink]="['/landing']">HULT PRIZE UTP</a><button
         class="cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
-        type="button"
-        (click)="toggleNavbar()"
-      >
+        type="button" (click)="toggleNavbar()">
         <i class="text-white fas fa-bars"></i>
       </button>
     </div>
-    <div
-      class="lg:flex flex-grow items-center bg-white lg:bg-transparent lg:shadow-none"
-      [ngClass]="{'hidden': !showMenu, 'block': showMenu}"
-    >
+    <div class="lg:flex flex-grow items-center bg-white lg:bg-transparent lg:shadow-none"
+      [ngClass]="{'hidden': !showMenu, 'block': showMenu}">
       <ul class="flex flex-col lg:flex-row list-none mr-auto">
         <li class="flex items-center">
-          <a
-            class="lg:text-white lg:hover:text-gray-300 text-gray-800 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold cursor-pointer"
-            [routerLink]="['/landing']"
-            ><i
-              class="lg:text-gray-300 text-gray-500 far fa-file-alt text-lg leading-lg mr-2"
-            ></i>
-            Inicio</a
-          >
+          <a class="lg:text-white lg:hover:text-gray-300 text-gray-800 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold cursor-pointer"
+            [routerLink]="['/landing']"><i
+              class="lg:text-gray-300 text-gray-500 far fa-file-alt text-lg leading-lg mr-2"></i>
+            Inicio</a>
         </li>
         <li class="flex items-center">
-          <a
-            class="lg:text-white lg:hover:text-gray-300 text-gray-800 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold cursor-pointer"
-            [routerLink]="['/landing']"
-            [fragment]="'sponsor'"
-            (click)="scrollToSponsor($event)"
-            ><i
-              class="lg:text-gray-300 text-gray-500 fas fa-handshake text-lg leading-lg mr-2"
-            ></i>
-            Patrocinar</a
-          >
+          <a class="lg:text-white lg:hover:text-gray-300 text-gray-800 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold cursor-pointer"
+            [routerLink]="['/landing']" [fragment]="'sponsor'" (click)="scrollToSponsor($event)"><i
+              class="lg:text-gray-300 text-gray-500 fas fa-handshake text-lg leading-lg mr-2"></i>
+            Patrocinar</a>
         </li>
       </ul>
       <ul class="flex flex-col lg:flex-row list-none lg:ml-auto">
         <li class="flex items-center">
-          <a
-            class="lg:text-white lg:hover:text-gray-300 text-gray-800 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold cursor-pointer"
-            href="https://www.instagram.com/hultprize_utp?igsh=NHlib3YzcHRxazN6"
-            title="Instagram"
-            ><i
-              class="lg:text-gray-300 text-gray-500 fab fa-instagram text-lg leading-lg "
-            ></i
-            ><span class="lg:hidden inline-block ml-2">Instagram</span></a
-          >
+          <a class="lg:text-white lg:hover:text-gray-300 text-gray-800 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold cursor-pointer"
+            href="https://www.instagram.com/hultprize_utp?igsh=NHlib3YzcHRxazN6" title="Instagram"><i
+              class="lg:text-gray-300 text-gray-500 fab fa-instagram text-lg leading-lg "></i><span
+              class="lg:hidden inline-block ml-2">Instagram</span></a>
         </li>
         <li class="flex items-center">
-          <a
-            class="lg:text-white lg:hover:text-gray-300 text-gray-800 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold cursor-pointer"
+          <a class="lg:text-white lg:hover:text-gray-300 text-gray-800 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold cursor-pointer"
             href="https://www.linkedin.com/in/hultprize-utp/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
-            title="LinkedIn"
-            ><i
-              class="lg:text-gray-300 text-gray-500 fab fa-linkedin text-lg leading-lg "
-            ></i
-            ><span class="lg:hidden inline-block ml-2">LinkedIn</span></a
-          >
+            title="LinkedIn"><i class="lg:text-gray-300 text-gray-500 fab fa-linkedin text-lg leading-lg "></i><span
+              class="lg:hidden inline-block ml-2">LinkedIn</span></a>
         </li>
         <li class="flex items-center">
-          <a
-            class="lg:text-white lg:hover:text-gray-300 text-gray-800 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold cursor-pointer"
-            href="https://www.tiktok.com/@hultprizeutp"
-            title="TikTok"
-            ><i
-              class="lg:text-gray-300 text-gray-500 fab fa-tiktok text-lg leading-lg "
-            ></i
-            ><span class="lg:hidden inline-block ml-2">TikTok</span></a
-          >
+          <a class="lg:text-white lg:hover:text-gray-300 text-gray-800 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold cursor-pointer"
+            href="https://www.tiktok.com/@hultprizeutp" title="TikTok"><i
+              class="lg:text-gray-300 text-gray-500 fab fa-tiktok text-lg leading-lg "></i><span
+              class="lg:hidden inline-block ml-2">TikTok</span></a>
         </li>
         <li class="flex items-center">
-          
+
         </li>
       </ul>
     </div>

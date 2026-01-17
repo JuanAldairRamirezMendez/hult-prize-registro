@@ -128,15 +128,41 @@ export class LandingComponent implements OnInit {
   seconds: number = 0;
   private deadline = new Date('2026-02-03T23:59:59').getTime();
   private timerInterval: any;
+  private observer: IntersectionObserver | null = null;
 
   ngOnInit() {
     this.startTimer();
+    this.initScrollReveal();
   }
 
   ngOnDestroy() {
     if (this.timerInterval) {
       clearInterval(this.timerInterval);
     }
+    if (this.observer) {
+      this.observer.disconnect();
+    }
+  }
+
+  initScrollReveal() {
+    this.observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+          // Once revealed, we don't need to observe it anymore
+          this.observer?.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.15 // Start animation when 15% seen
+    });
+
+    // Observe all elements with .reveal class
+    // Using setTimeout to ensure elements are rendered (Angular lifecycle)
+    setTimeout(() => {
+      const reveals = document.querySelectorAll('.reveal');
+      reveals.forEach(el => this.observer?.observe(el));
+    }, 100);
   }
 
   startTimer() {
